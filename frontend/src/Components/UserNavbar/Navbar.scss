@@ -1,0 +1,21 @@
+nav {
+  img {
+    height: 60px;
+    width: auto;
+  }
+  .nav-right {
+    li {
+      margin: 0 10px;
+    }
+    .login {
+      color: #242F9B;
+    }
+    .register {
+      color: #fff;
+      background-color: #242F9B;
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+      border-radius: 5px;
+    }
+  }
+}
