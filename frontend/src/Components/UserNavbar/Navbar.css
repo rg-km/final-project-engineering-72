@@ -1,0 +1,19 @@
+nav img {
+  height: 60px;
+  width: auto;
+}
+nav .nav-right li {
+  margin: 0 10px;
+}
+nav .nav-right .login {
+  color: #242F9B;
+}
+nav .nav-right .register {
+  color: #fff;
+  background-color: #242F9B;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  border-radius: 5px; 
+}
+
+/*# sourceMappingURL=Navbar.css.map */
