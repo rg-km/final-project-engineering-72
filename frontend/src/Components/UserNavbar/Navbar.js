@@ -28,9 +28,6 @@ export default function Navbar() {
         <span className="nav-right navbar-text">
           <ul className="navbar-nav">
               <li className="nav-item">
-                <a href="" className="nav-link"><i class="fa-solid fa-magnifying-glass"></i></a>
-              </li>
-              <li className="nav-item">
                 <a href="" className="nav-link login">Masuk</a>
               </li>
               <li className="nav-item">
