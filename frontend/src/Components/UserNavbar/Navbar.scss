@@ -1,4 +1,5 @@
 nav {
+  background: #fff;
   img {
     height: 60px;
     width: auto;
@@ -10,12 +11,30 @@ nav {
     .login {
       color: #242F9B;
     }
+    .login:hover {
+      color: #757dd3;
+      transition: 0.5s ease;
+    }
     .register {
       color: #fff;
       background-color: #242F9B;
       padding-left: 30px !important;
       padding-right: 30px !important;
       border-radius: 5px;
+    }
+    .register:hover {
+      color: #fff;
+      background-color: #1d2780;
+      transition: 0.5s ease;
+    }
+    .register:focus {
+      border: none;
+      box-shadow: 0 0 0 5px #24309b7c;
+      transition: 0.3s ease;
+    }
+    .prim-btn:focus {
+      background-color: #131a58;
+      transition: 0.1s ease;
     }
   }
 }
