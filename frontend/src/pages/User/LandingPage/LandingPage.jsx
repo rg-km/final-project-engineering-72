@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react"
 import "./LandingPage.css"
 
 export default function LandingPage() {
+  useEffect(() => {
+    document.title = "Home - Subaku";
+  }, []);
+
   return (
     <div className="landing-wrapper">
       <section className="landing-jumbotron">
         <div className="container jumbotron-container">
           <div className="jumbotron-text">
             <h1>Yuk, Daftar &amp; Wujudkan Mimpimu! </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Daftarkan dirimu, dan siapkan langkah pertamamu untuk meraih beasiswa impian bersama Subaku.</p>
             <div className="jumbotron-buttons">
               <a href="#" className="register-btn my-btn prim-btn">Daftar Sekarang</a>
               <a href="#" className="login-btn my-btn sec-btn">Masuk</a>
@@ -22,7 +26,7 @@ export default function LandingPage() {
       <section className="landing-cari">
         <div className="container cari-container">
           <h1>Cari beasiswa yang Kamu minati</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Mulai mencari beragam beasiswa pilihan yang bisa Kamu daftarkan di Subaku.</p>
           <a href="#" className="cari-btn my-btn sec-btn">Cari Beasiswa</a>
         </div>
       </section>
@@ -31,7 +35,7 @@ export default function LandingPage() {
           <div className="menu-desc">
             <div className="containers">
               <h1>Pengumuman Seleksi</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Nantikan selalu kelulusan seleksi beasiswa Kamu di halaman Pengumuman Seleksi.</p>
               <a href="#" className="menu-btn my-btn sec-btn">Lihat Pengumuman</a>
             </div>  
           </div>
@@ -52,7 +56,7 @@ export default function LandingPage() {
           <div className="menu-desc">
             <div className="containers">
               <h1>Prosedur Pendaftaran</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Sebelum memilih dan mendaftar beasiswa, Kamu bisa mempelajari prosedurnya terlebih dahulu di halaman Prosedur Pendaftaran.</p>
               <a href="#" className="menu-btn my-btn sec-btn">Lihat Prosedur</a>
             </div>  
           </div>
