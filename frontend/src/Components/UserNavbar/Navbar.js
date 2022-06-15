@@ -22,16 +22,16 @@ export default function Navbar() {
             <a className="nav-link" href="#">Prosedur</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Tentang Kami</a>
+            <a className="nav-link" href="#">Pengumuman</a>
           </li>
         </ul>      
         <span className="nav-right navbar-text">
           <ul className="navbar-nav">
               <li className="nav-item">
-                <a href="" className="nav-link login">Masuk</a>
+                <a href="#" className="nav-link login">Masuk</a>
               </li>
               <li className="nav-item">
-                <a href="" className="nav-link register">Daftar Akun</a>
+                <a href="#" className="nav-link register">Daftar Akun</a>
               </li>
             </ul>
         </span>
