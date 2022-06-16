@@ -2,25 +2,32 @@ package main
 
 import (
 	"database/sql"
-
-	"github.com/rg-km/final-project-engineering-72/backend/api"
-	"github.com/rg-km/final-project-engineering-72/backend/repository"
+	"final-project-engineering-72/user"
+	"log"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	db, err := sql.Open("sqlite3", "backend/db/subaku.db")
+	db, err := sql.Open("sqlite3", "database/subaku.db")
 	if err != nil {
-		panic(err)
+		log.Fatalf("error: %v", err)
 	}
 
-	usersRepo := repository.NewUserRepository(db)
-	productsRepo := repository.NewProductRepository(db)
-	cartItemRepo := repository.NewCartItemRepository(db)
-	salesRepo := repository.NewSalesRepository(db)
-	transactionRepo := repository.NewTransactionRepository(db, *productsRepo, *cartItemRepo)
+	// repouser
+	repoUser := user.NewRepository(db)
+	// serviceuser
+	seriveUser := user.NewService(repoUser)
+	input := user.InputRegister{
+		Username: "ice",
+		Email:    "ice@gmail.com",
+		Password: "12345654321",
+	}
+	user, err := seriveUser.RegisterUser(input)
+	if err != nil {
+		log.Fatalf("error: %v", err.Error())
+	}
 
-	mainAPI := api.NewAPI(*usersRepo, *productsRepo, *cartItemRepo, transactionRepo, *salesRepo)
-	mainAPI.Start()
+	log.Printf("email : %v", user.Email)
+
 }
