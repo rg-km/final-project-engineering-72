@@ -1,0 +1,32 @@
+SQLite format tablepengumuman_beasiswapengumuman_beasiswa CREATE TABLE pengumuman_beasiswa (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	nominal NUMERIC NOT NULL,
+	is_diterima VARCHAR(50) NOT NULL,
+	id_user INTEGER NOT NULL,
+	id_beasiswa INTEGER NOT NULL,
+	CONSTRAINT pengumuman_beasiswa_FK FOREIGN KEY (id) REFERENCES "user"(id),
+	CONSTRAINT pengumuman_beasiswa_FK_1 FOREIGN KEY (id_beasiswa) REFERENCES beasiswa(id_beasiswa)
+)tablebeasiswabeasiswa CREATE TABLE beasiswa (
+	id_beasiswa INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	jenis_beasiswa TEXT(50) NOT NULL,
+	sumber_beasiswa REAL NOT NULL,
+	tanggal_pendaftaran BLOB NOT NULL,
+	keterangan TEXT(50) NOT NULL
+)tablesqlite_sequencesqlite_sequence CREATE TABLE sqlite_sequence(name,seq)}tableuseruser CREATE TABLE "user" (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	username VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	nisn INTEGER NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	nama VARCHAR(50) NOT NULL,
+	tanggal_lahir BLOB NOT NULL,
+	jenis_kelamin VARCHAR NOT NULL,
+	alamat TEXT(50) NOT NULL,
+	asal_sekolah VARCHAR(50) NOT NULL,
+	pendidikan_terakhir VARCHAR(50) NOT NULL,
+	no_telepon NUMERIC NOT NULL,
+	nama_ortu VARCHAR(50) NOT NULL,
+	pekerjaan_ortu VARCHAR(50) NOT NULL,
+	penghasilan_ortu VARCHAR(50) NOT NULL,
+	"role" VARCHAR NOT NULL
+)
