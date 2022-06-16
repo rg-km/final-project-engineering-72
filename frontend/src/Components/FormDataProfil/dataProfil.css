@@ -1,0 +1,26 @@
+.data-profil .card {
+  background: #ffffff;
+  border-radius: 11px;
+  margin-top: 196px;
+}
+
+.data-profil .card .card-body .card-title {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 140.62%;
+  /* or 51px */
+  color: #242f9b;
+  padding-left: 563px;
+}
+
+.data-profil .card .card-body .row {
+  padding-top: 60px;
+  padding-bottom: 298px;
+}
+
+.data-profil .card .card-body .btn-update {
+  padding-left: 134px;
+}
+/*# sourceMappingURL=DataProfil.css.map */

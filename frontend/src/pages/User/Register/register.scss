@@ -1,0 +1,91 @@
+#register {
+  background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
+  padding: 400px 0;
+
+  #kolom-utama {
+    width: 485px;
+    height: 661px;
+    left: 485px;
+    top: 211px;
+
+    background: #fbfbfb;
+    .card {
+      border-color: #ffffff;
+      background: #fbfbfb;
+      padding-top: 85px;
+      .card-body {
+        .daftar {
+          font-family: "PT Sans";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          //   line-height: 140.62%;
+          /* or 51px */
+
+          padding-top: 10px 0;
+
+          color: #242f9b;
+
+          margin-bottom: 21px;
+        }
+        .form-label {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          /* or 28px */
+          padding-top: 10px;
+          color: #000000;
+        }
+        .form-control {
+          background: #d9d9d9;
+        }
+        .btn-daftar {
+          background: #242f9b;
+          border-radius: 4px;
+
+          font-family: "PT Sans";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 140.62%;
+          width: 153px;
+          height: 61px;
+          /* or 34px */
+
+          color: #ffffff;
+        }
+        .btn {
+          position: absolute;
+          top: 500px;
+          left: 155px;
+        }
+        .teks-bawah {
+          font-family: "Rubik";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140.62%;
+          /* or 22px */
+          color: #000000;
+          position: absolute;
+          top: 570px;
+          left: 115px;
+        }
+      }
+    }
+  }
+  #kolom-kedua {
+    width: 441px;
+    height: 661px;
+
+    background: #ffffff;
+    img {
+      padding-top: 141px;
+      padding-bottom: 158px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    padding-top: 50px;
+  }
+}
