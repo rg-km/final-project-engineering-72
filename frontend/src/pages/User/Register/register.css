@@ -1,6 +1,6 @@
 #register {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 400px 0;
+  padding: 50px 0;
 }
 
 #register #kolom-utama {
@@ -8,6 +8,9 @@
   height: 661px;
   left: 485px;
   top: 211px;
+  margin-left: 207px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   background: #fbfbfb;
 }
 
@@ -23,9 +26,10 @@
   font-weight: 700;
   font-size: 36px;
   /* or 51px */
-  padding-top: 10px 0;
+  padding-top: 5px 0;
   color: #242f9b;
-  margin-bottom: 21px;
+  margin-top: -50px;
+  margin-bottom: 50px;
 }
 
 #register #kolom-utama .card .card-body .form-label {
@@ -34,7 +38,6 @@
   font-weight: 500;
   font-size: 20px;
   /* or 28px */
-  padding-top: 10px;
   color: #000000;
 }
 
@@ -54,30 +57,65 @@
   height: 61px;
   /* or 34px */
   color: #ffffff;
-}
-
-#register #kolom-utama .card .card-body .btn {
   position: absolute;
-  top: 500px;
+  top: 478px;
   left: 155px;
 }
 
-#register #kolom-utama .card .card-body .teks-bawah {
+#register #kolom-utama .card .card-body .btn-daftar:hover {
+  color: #fff;
+  background-color: #1d2780;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+#register #kolom-utama .card .card-body .teks-bawah .form-label-bawah {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 140.62%;
   /* or 22px */
-  color: #000000;
-  position: absolute;
-  top: 570px;
-  left: 115px;
+  margin-top: 100px;
+  margin-left: 95px;
+}
+
+#register #kolom-utama .card .card-body .teks-bawah .teks-bawah1 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  /* or 22px */
+}
+
+#register .watermark {
+  padding-top: 70px;
+}
+
+#register .watermark .watermark-kiri {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 41px;
+  margin-bottom: 46px;
+  color: #fcfcfc;
+}
+
+#register .watermark .watermark-kanan {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 140.62%;
+  /* or 28px */
+  color: #fcfcfc;
 }
 
 #register #kolom-kedua {
   width: 441px;
   height: 661px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background: #ffffff;
 }
 
@@ -88,7 +126,22 @@
 
 @media only screen and (max-width: 600px) {
   #register {
-    padding-top: 50px;
+    padding-top: 10px;
+  }
+  #register #kolom-utama {
+    margin-left: 1px;
+  }
+  #register form .btn {
+    margin-left: -60px;
+  }
+  #register form .teks-bawah {
+    margin-left: -60px;
+  }
+  #register form .masuk {
+    margin-top: -5px;
+  }
+  #register #kolom-kedua {
+    margin-right: 60px;
   }
 }
 /*# sourceMappingURL=register.css.map */

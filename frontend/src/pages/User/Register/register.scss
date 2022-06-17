@@ -1,12 +1,15 @@
 #register {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 400px 0;
+  padding: 50px 0;
 
   #kolom-utama {
     width: 485px;
     height: 661px;
     left: 485px;
     top: 211px;
+    margin-left: 207px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 
     background: #fbfbfb;
     .card {
@@ -22,11 +25,12 @@
           //   line-height: 140.62%;
           /* or 51px */
 
-          padding-top: 10px 0;
+          padding-top: 5px 0;
 
           color: #242f9b;
 
-          margin-bottom: 21px;
+          margin-top: -50px;
+          margin-bottom: 50px;
         }
         .form-label {
           font-family: "Rubik";
@@ -34,7 +38,6 @@
           font-weight: 500;
           font-size: 20px;
           /* or 28px */
-          padding-top: 10px;
           color: #000000;
         }
         .form-control {
@@ -54,30 +57,67 @@
           /* or 34px */
 
           color: #ffffff;
-        }
-        .btn {
           position: absolute;
-          top: 500px;
+          top: 478px;
           left: 155px;
         }
+        .btn-daftar:hover {
+          color: #fff;
+          background-color: #1d2780;
+          transition: 0.5s ease;
+        }
+
         .teks-bawah {
-          font-family: "Rubik";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 140.62%;
-          /* or 22px */
-          color: #000000;
-          position: absolute;
-          top: 570px;
-          left: 115px;
+          .form-label-bawah {
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            // line-height: 140.62%;
+            /* or 22px */
+            margin-top: 100px;
+            margin-left: 95px;
+          }
+          .teks-bawah1 {
+            font-family: "Rubik";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            // line-height: 140.62%;
+            /* or 22px */
+          }
         }
       }
+    }
+  }
+  .watermark {
+    padding-top: 70px;
+    // margin-top: 100px;
+    .watermark-kiri {
+      font-family: "PT Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 41px;
+      margin-bottom: 46px;
+      color: #fcfcfc;
+    }
+    .watermark-kanan {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140.62%;
+      /* or 28px */
+
+      color: #fcfcfc;
     }
   }
   #kolom-kedua {
     width: 441px;
     height: 661px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     background: #ffffff;
     img {
@@ -86,6 +126,23 @@
     }
   }
   @media only screen and (max-width: 600px) {
-    padding-top: 50px;
+    padding-top: 10px;
+    #kolom-utama {
+      margin-left: 1px;
+    }
+    form {
+      .btn {
+        margin-left: -60px;
+      }
+      .teks-bawah {
+        margin-left: -60px;
+      }
+      .masuk {
+        margin-top: -5px;
+      }
+    }
+    #kolom-kedua {
+      margin-right: 60px;
+    }
   }
 }
