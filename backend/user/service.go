@@ -14,7 +14,7 @@ type service struct {
 	repository Repository
 }
 
-// bikin func newsevice buat di panggil di main
+// bikin func newservice buat di panggil di main
 func NewService(repository Repository) *service {
 	return &service{repository}
 }

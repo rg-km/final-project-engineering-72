@@ -56,7 +56,7 @@ func migrate() {
 		)
 
 			VALUES 
-			("admin_kece", "123456789", "admin", " ", "admin", 2000-03-01, "L", "Jakarta", "rizky@gmail.com", " ", "S1", "087809875678", "Mike", " ", " ")
+			("admin_kece", "123456789", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ")
 	;`
 
 	// execute query create table
