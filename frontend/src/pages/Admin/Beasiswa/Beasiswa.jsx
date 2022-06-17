@@ -1,8 +1,8 @@
 import React, { useEffect,useState } from "react";
 import Sidebar from "../../../Components/Sidebar/Sidebar";
-import "./Dashboard.css";
+import "./Beasiswa.css";
 
-export default function Dashboard() {
+export default function Users() {
     useEffect(() => {
         document.title = "Dashboard - Subaku";
       }, []);
@@ -13,7 +13,8 @@ export default function Dashboard() {
                 <Sidebar/>
             </div>
             <div className="container">
-            <img src={require("../../../assets/logo-subaku.png")} alt="logo-app"/>
+                <h1>Data Master Beasiswa</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
             </div>
         </div>
     );
