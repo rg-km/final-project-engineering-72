@@ -2,32 +2,21 @@ package main
 
 import (
 	"database/sql"
-	"final-project-engineering-72/user"
-	"log"
+
+	"github.com/rg-km/final-project-engineering-72/backend/api"
+	"github.com/rg-km/final-project-engineering-72/backend/repository"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	db, err := sql.Open("sqlite3", "database/subaku.db")
+	db, err := sql.Open("sqlite3", "database/migration/subaku.db")
 	if err != nil {
-		log.Fatalf("error: %v", err)
+		panic(err)
 	}
 
-	// repouser
-	repoUser := user.NewRepository(db)
-	// serviceuser
-	seriveUser := user.NewService(repoUser)
-	input := user.InputRegister{
-		Username: "ice",
-		Email:    "ice@gmail.com",
-		Password: "12345654321",
-	}
-	user, err := seriveUser.RegisterUser(input)
-	if err != nil {
-		log.Fatalf("error: %v", err.Error())
-	}
+	usersRepo := repository.NewUserRepository(db)
 
-	log.Printf("email : %v", user.Email)
-
+	mainAPI := api.NewAPI(*usersRepo)
+	mainAPI.Start()
 }

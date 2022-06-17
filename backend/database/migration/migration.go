@@ -1,16 +1,17 @@
 package main
 
 import (
-	"final-project-engineering-72/database/connection"
+	"database/sql"
 	"log"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 func migrate() {
-
 	// ambil koneksi database
-	db, err := connection.ConnectToDB()
+	db, err := sql.Open("sqlite3", "database/migration/subaku.db")
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	// query
@@ -35,6 +36,11 @@ func migrate() {
 		)	
 	;`
 
+	// execute query create table
+	_, err = db.Exec(createTableUser)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
 	// query add admin
 	addAdmin := `
 			INSERT INTO users 
@@ -56,14 +62,8 @@ func migrate() {
 		)
 
 			VALUES 
-			("admin_kece", "123456789", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ")
+			("admin_kece", "123456789", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ")
 	;`
-
-	// execute query create table
-	_, err = db.Exec(createTableUser)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
 
 	// execute query create table
 	_, err = db.Exec(addAdmin)
