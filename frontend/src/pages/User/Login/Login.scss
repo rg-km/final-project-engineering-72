@@ -1,6 +1,6 @@
 #login {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 200px 0;
+  padding: 70px 0;
 
   #kolom-kiri {
     width: 485px;
@@ -86,6 +86,29 @@
           }
         }
       }
+    }
+  }
+  .watermark {
+    padding-top: 150px;
+    // margin-top: 100px;
+    .watermark-kiri {
+      font-family: "PT Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 41px;
+      margin-bottom: 46px;
+      color: #fcfcfc;
+    }
+    .watermark-kanan {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140.62%;
+      /* or 28px */
+
+      color: #fcfcfc;
     }
   }
   #kolom-kanan {

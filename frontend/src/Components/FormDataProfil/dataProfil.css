@@ -1,7 +1,11 @@
+.data-profil {
+  padding: 400px 0;
+}
+
 .data-profil .card {
   background: #ffffff;
   border-radius: 11px;
-  margin-top: 196px;
+  margin-top: -15px;
 }
 
 .data-profil .card .card-body .card-title {
@@ -13,14 +17,34 @@
   /* or 51px */
   color: #242f9b;
   padding-left: 563px;
+  padding-top: 10px;
 }
 
 .data-profil .card .card-body .row {
   padding-top: 60px;
-  padding-bottom: 298px;
 }
 
-.data-profil .card .card-body .btn-update {
-  padding-left: 134px;
+.data-profil .card .card-body .form-label {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140.62%;
+  /* or 22px */
+  color: #000000;
+}
+
+.data-profil .card .card-body .form-control {
+  background: #d9d9d9;
+}
+
+.data-profil .card .card-body .form-select {
+  background: #d9d9d9;
+}
+
+.data-profil .card .card-body .btn-submit {
+  background: #242f9b;
+  border-radius: 2px;
+  width: 100%;
 }
 /*# sourceMappingURL=DataProfil.css.map */

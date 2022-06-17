@@ -13,152 +13,203 @@ export default class DataProfil extends Component {
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledTextInput" className="form-label">
-                      Disabled input
+                      Nama Lengkap
                     </label>
                     <input
                       type="text"
                       id="disabledTextInput"
                       className="form-control"
-                      placeholder="Disabled input"
+                      placeholder="Nama Lengkap"
                     />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto">
                   <div className="mb-5">
                     <label for="disabledTextInput" className="form-label">
-                      Disabled input
+                      Tanggal Lahir
                     </label>
                     <input
-                      type="text"
+                      type="date"
                       id="disabledTextInput"
                       className="form-control"
-                      placeholder="Disabled input"
+                      placeholder="Tanggal Lahir"
                     />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      NISN
+                    </label>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="NISN"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-5 mx-auto ">
+                  <div className="mb-5">
+                    <label for="disabledSelect" className="form-label">
+                      Jenis Kelamin
                     </label>
                     <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
+                      <option></option>
+                      <option>Laki - laki</option>
+                      <option>Perempuan</option>
                     </select>
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Alamat
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="Alamat"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-5 mx-auto ">
+                  <div className="mb-5">
+                    <label for="disabledSelect" className="form-label">
+                      Pendidikan Terakhir
+                    </label>
+                    <select id="" className="form-select">
+                      <option></option>
+                      <option>SD</option>
+                      <option>SMP</option>
+                      <option>SMA</option>
                     </select>
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Asal Sekolah
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="Asal Sekolah"
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Email
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="Email"
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      No Telepon
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="No Telepon"
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Nama Orang Tua (Ayah/ibu)
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="Nama Orang Tua"
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Pekerjaan Orang Tua
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="Pekerjaan Orang Tua"
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Penghasilan Orang Tua
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder="Penghasilan Orang Tua"
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Daftar Lomba Diikuti*
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder=""
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
                     <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                      Daftar Organisasi*
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
+                    <input
+                      type="text"
+                      id="disabledTextInput"
+                      className="form-control"
+                      placeholder=""
+                    />
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
-                    <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                    <label for="disabledSelect" className="form-label-kecil">
+                      *Kosongkan jika tidak ada
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
                   </div>
                 </div>
                 <div className="col-md-5 mx-auto ">
                   <div className="mb-5">
-                    <label for="disabledSelect" className="form-label">
-                      Disabled select menu
+                    <label for="disabledSelect" className="form-label-kecil">
+                      *Kosongkan jika tidak ada
                     </label>
-                    <select id="disabledSelect" className="form-select">
-                      <option>Disabled select</option>
-                    </select>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary btn-update">
-                  Submit
-                </button>
+                <div className="col-md-11 mx-auto">
+                  <button type="submit" className="btn btn-primary btn-submit">
+                    Submit
+                  </button>
+                </div>
               </div>
             </form>
           </div>
