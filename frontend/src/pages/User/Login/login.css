@@ -1,49 +1,50 @@
 #login {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 400px 0;
+  padding: 200px 0;
 }
 
-#login #kolom-utama {
+#login #kolom-kiri {
   width: 485px;
   height: 661px;
   left: 485px;
   top: 211px;
   margin-left: 207px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   background: #fbfbfb;
 }
 
-#login #kolom-utama .card {
+#login #kolom-kiri .card {
   border-color: #ffffff;
   background: #fbfbfb;
   padding-top: 85px;
 }
 
-#login #kolom-utama .card .card-body .masuk {
+#login #kolom-kiri .card .card-body .masuk {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   /* or 51px */
-  padding-top: 10px 0;
+  padding-top: 5px 0;
   color: #242f9b;
   margin-bottom: 21px;
 }
 
-#login #kolom-utama .card .card-body .form-label {
+#login #kolom-kiri .card .card-body .form-label {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   /* or 28px */
-  padding-top: 50px;
   color: #000000;
 }
 
-#login #kolom-utama .card .card-body .form-control {
+#login #kolom-kiri .card .card-body .form-control {
   background: #d9d9d9;
 }
 
-#login #kolom-utama .card .card-body .btn-daftar {
+#login #kolom-kiri .card .card-body .btn-daftar {
   background: #242f9b;
   border-radius: 4px;
   font-family: "PT Sans";
@@ -55,41 +56,60 @@
   height: 61px;
   /* or 34px */
   color: #ffffff;
-}
-
-#login #kolom-utama .card .card-body .btn {
   position: absolute;
-  top: 500px;
+  top: 478px;
   left: 155px;
 }
 
-#login #kolom-utama .card .card-body .teks-bawah {
+#login #kolom-kiri .card .card-body .teks-bawah .form-label-bawah {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 140.62%;
   /* or 22px */
-  color: #000000;
-  position: absolute;
-  top: 570px;
-  left: 115px;
+  margin-top: 100px;
+  margin-left: 95px;
 }
 
-#login #kolom-kedua {
+#login #kolom-kiri .card .card-body .teks-bawah .teks-bawah1 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  /* or 22px */
+}
+
+#login #kolom-kanan {
   width: 441px;
   height: 661px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background: #ffffff;
 }
 
-#login #kolom-kedua img {
+#login #kolom-kanan img {
   padding-top: 141px;
   padding-bottom: 158px;
 }
 
 @media only screen and (max-width: 600px) {
   #login {
-    padding-top: 50px;
+    padding-top: 10px;
+  }
+  #login #kolom-kiri {
+    margin-left: 1px;
+  }
+  #login form .btn {
+    margin-left: -60px;
+  }
+  #login form .teks-bawah {
+    margin-left: -60px;
+  }
+  #login form .masuk {
+    margin-top: -5px;
+  }
+  #login #kolom-kanan {
+    margin-right: 60px;
   }
 }
 /*# sourceMappingURL=Login.css.map */
