@@ -36,13 +36,14 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   /* or 28px */
   color: #000000;
 }
 
 #register #kolom-utama .card .card-body .form-control {
   background: #d9d9d9;
+  border-radius: 10px;
 }
 
 #register #kolom-utama .card .card-body .btn-daftar {
@@ -88,7 +89,7 @@
 }
 
 #register .watermark {
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
 #register .watermark .watermark-kiri {
@@ -126,10 +127,10 @@
 
 @media only screen and (max-width: 600px) {
   #register {
-    padding-top: 10px;
+    padding-top: 1px;
   }
   #register #kolom-utama {
-    margin-left: 1px;
+    margin-left: -2px;
   }
   #register form .btn {
     margin-left: -60px;

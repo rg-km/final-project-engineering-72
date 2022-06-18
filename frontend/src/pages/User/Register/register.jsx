@@ -26,17 +26,18 @@ export default function () {
                     </div>
                     <div className="mb-4">
                       <label for="exampleInputPassword1" className="form-label">
-                        Kata Sandi
+                        Email
                       </label>
                       <input
-                        type="password"
+                        type="email"
                         className="form-control"
-                        id="exampleInputPassword1"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
                       />
                     </div>
                     <div className="mb-4">
                       <label for="exampleInputPassword1" className="form-label">
-                        Ulangi Kata Sandi
+                        Kata Sandi
                       </label>
                       <input
                         type="password"
