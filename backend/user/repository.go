@@ -8,11 +8,8 @@ import (
 type Repository interface {
 	Save(user User) (User, error)
 	FindUserByEmail(email string) (User, error)
-<<<<<<< HEAD
 	FindUserByUsername(username string) (User, error)
 	FindUserByPassword(password string) (User, error)
-=======
->>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 }
 
 // repo ini butuh koneksi database untuk query
@@ -49,19 +46,11 @@ func (r *respository) Save(user User) (User, error) {
 		)
 
 			VALUES 
-<<<<<<< HEAD
 			(?, ?, "siswa", ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?)
 	;`
 
 	// execute query create table
 	_, err := r.db.Exec(sql, user.UserName, user.Password, user.Nisn, user.Nama, user.TanggalLahir, user.JenisKelamin, user.Alamat, user.Email, user.AsalSekolah, user.PendidikanTerkahir, user.NomorTelepon, user.NamaOrangTua, user.PenghasilanOrangTua, user.PekerjaanOrangTua)
-=======
-			(?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?)
-	;`
-
-	// execute query create table
-	_, err := r.db.Exec(sql, user.UserName, user.Password, user.Role, user.Nisn, user.Nama, user.TanggalLahir, user.JenisKelamin, user.Alamat, user.Email, user.AsalSekolah, user.PendidikanTerkahir, user.NomorTelepon, user.NamaOrangTua, user.PenghasilanOrangTua, user.PekerjaanOrangTua)
->>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 	if err != nil {
 		return user, err
 	}
@@ -110,7 +99,6 @@ func (r *respository) FindUserByEmail(email string) (User, error) {
 	return user, nil
 }
 
-<<<<<<< HEAD
 // func untuk mencari user by username
 func (r *respository) FindUserByUsername(username string) (User, error) {
 	// inisiasi struct user
@@ -193,8 +181,6 @@ func (r *respository) FindUserByPassword(password string) (User, error) {
 	return user, nil
 }
 
-=======
->>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 // FE ada tombol register
 // 	user memasukan data diri untuk register (username,email,password)
 // 	user tekan tombol register
