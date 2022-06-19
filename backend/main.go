@@ -11,11 +11,16 @@ import (
 )
 
 func main() {
+<<<<<<< HEAD
 	db, err := sql.Open("sqlite3", "database/subaku.db")
+=======
+	db, err := sql.Open("sqlite3", "database/migration/subaku.db")
+>>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
 
+<<<<<<< HEAD
 	// repouser
 	repoUser := user.NewRepository(db)
 	// serviceuser
@@ -32,4 +37,10 @@ func main() {
 
 	// run server
 	server.Run(":8080")
+=======
+	usersRepo := repository.NewUserRepository(db)
+
+	mainAPI := api.NewAPI(*usersRepo)
+	mainAPI.Start()
+>>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 }

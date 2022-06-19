@@ -7,7 +7,10 @@ import (
 // bikin kontrak function (interface)
 type Service interface {
 	RegisterUser(input InputRegister) (User, error)
+<<<<<<< HEAD
 	LoginUser(input InputLogin) (User, error)
+=======
+>>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 }
 
 // bikin struct dengan atribut bertipe Repository
@@ -15,7 +18,11 @@ type service struct {
 	repository Repository
 }
 
+<<<<<<< HEAD
 // bikin func newsevice buat di panggil di main
+=======
+// bikin func newservice buat di panggil di main
+>>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452
 func NewService(repository Repository) *service {
 	return &service{repository}
 }
@@ -47,6 +54,7 @@ func (s *service) RegisterUser(input InputRegister) (User, error) {
 
 	return newUser, nil
 }
+<<<<<<< HEAD
 
 // func login
 func (s *service) LoginUser(input InputLogin) (User, error) {
@@ -69,3 +77,5 @@ func (s *service) LoginUser(input InputLogin) (User, error) {
 	}
 	return users, nil
 }
+=======
+>>>>>>> 21732ecef3d202f88895732397ca21fabe8fa452

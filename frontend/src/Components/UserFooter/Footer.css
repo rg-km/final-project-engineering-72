@@ -1,0 +1,39 @@
+.footer {
+  background: #242F9B;
+  padding-top: 8vh;
+}
+.footer .container {
+  height: 420px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer .container h2 {
+  color: #fff;
+}
+.footer .container h4, .footer .container p, .footer .container a {
+  color: #e4e4e4;
+}
+.footer .container ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.footer .container .link {
+  margin-bottom: 3vh;
+}
+.footer .container .link a {
+  transition: 0.2s ease;
+}
+.footer .container .link a:hover {
+  color: #c5c5c5;
+  transition: 0.4s ease;
+}
+.footer .container .layanan li {
+  margin-bottom: 1vh;
+}
+.footer .container .contacts li {
+  display: inline;
+  margin-right: 1.5vw;
+}
+
+/*# sourceMappingURL=Footer.css.map */
