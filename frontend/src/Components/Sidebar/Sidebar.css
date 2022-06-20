@@ -17,6 +17,10 @@
     font-weight: 500;
     color: #fff;
 }
+/* temporary */
+.sidebar .nav .nav-item.active{
+    border-left: #9BA3EB 3px solid;
+}
 .sidebar .nav-link:hover {
     color: #DBDFFD;
 }
@@ -54,6 +58,7 @@
  }
 
  .footer {
+    background-color: #646FD4;
     text-align: center;
     left: 50px;
     font-size: 15px;
