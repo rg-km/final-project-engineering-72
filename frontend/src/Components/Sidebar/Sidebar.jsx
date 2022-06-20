@@ -3,40 +3,42 @@ import "./Sidebar.css";
 
 function Sidebar() {
   return (
-    <div className="nav-side-menu">
-        <div className="brand d-flex">
-            <img src={require("../../assets/logo-subaku.png")} alt="logo-app" className='logo'/>
-            <h4><span>Subaku</span></h4>
-        </div>
-        <i classNameName="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-        <div className="menu-list">
-            <ul id="menu-content" className="menu-content collapse out">
-                <li className='active'>
-                  <a href="#" className='menu-link'>
-                  <i className="fa fa-dashboard fa-lg"></i> Dashboard
-                  </a>
-                </li>
-
-                <li  data-toggle="collapse" data-target="#users" className="collapsed">
-                  <a href="#" className='menu-link'><i className="fa fa-users fa-lg"></i> Users <span className="arrow"></span></a>
-                </li>
-                <ul className="sub-menu collapse" id="user">
-                    <li><a href="#" className='menu-link'>Data Master User</a></li>
-                </ul>
-
-                <li data-toggle="collapse" data-target="#beasiswa" className="collapsed">
-                  <a href="#" className='menu-link'><i class="fa fa-graduation-cap" aria-hidden="true"></i> Beasiswa <span className="arrow"></span></a>
-                </li> 
-                <ul className="sub-menu collapse" id="service">
-                  <li><a href="#" className='menu-link'>Data Master Beasiswa</a></li>
-                  <li><a href="#" className='menu-link'>Data Pendaftaran</a></li>
-                </ul>
-            </ul>
-        </div>
-        <div className="footer">
-            <p className='copyright'><span>Copyright © 2022 Subaku</span></p>
-        </div>
-    </div>
+		<nav className="sidebar card py-2 mb-4">
+			<ul className="nav flex-column" id="nav_accordion">
+				<li className="header">
+				<img className='logo' src={require("../../assets/icon-subaku.png")} alt="logo subaku" />
+					<h6 className='namepage'><span>Subaku</span></h6>
+				</li>
+				<li className="nav-item active">
+					<a className="nav-link" href="#">
+						<i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard 
+					</a>
+				</li>
+				<li className="nav-item">
+					<a className="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item1" href="#"> 
+						<i class="fa fa-users" aria-hidden="true"></i> Users <i className="bi small bi-caret-down-fill"></i> 
+					</a>
+					<ul id="menu_item1" className="submenu collapse" data-bs-parent="#nav_accordion">
+						<li><a className="nav-link" href="#">Lihat Users </a></li>
+					</ul>
+				</li>
+				<li className="nav-item">
+					<a className="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item2" href="#">
+						<i class="fa fa-graduation-cap" aria-hidden="true"></i> Beasiswa <i className="bi small bi-caret-down-fill"></i> 
+					</a>
+					<ul id="menu_item2" className="submenu collapse" data-bs-parent="#nav_accordion">
+						<li><a className="nav-link" href="#"> Data Master Beasiswa </a></li>
+						<li><a className="nav-link" href="#"> Data Pendaftaran Beasiswa </a></li>
+					</ul>
+				</li>
+				<li className="nav-item">
+					<a className="nav-link" href="#"> Keluar </a>
+				</li>
+				<li className='footer'>
+					<p><span>Subaku &copy; 2022</span></p>
+				</li>
+			</ul>
+		</nav>
   )
 }
 
