@@ -74,8 +74,18 @@ func (h *handlerUser) ProfilUser(c *gin.Context) {
 	// insiasi struct inputlogin
 	var input user.InputProfil
 
+	// binding dengan data yang diadapat dari request
+	err := c.ShouldBindJSON(&input)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"message": "binding data error",
+			"status":  "gagal",
+		})
+		return
+	}
+
 	// panggil function register
-	_, err := h.service.ProfilUser(input)
+	_, err = h.service.ProfilUser(input)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": err.Error(),
