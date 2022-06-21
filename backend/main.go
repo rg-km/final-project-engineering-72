@@ -19,9 +19,9 @@ func main() {
 	// repouser
 	repoUser := user.NewRepository(db)
 	// serviceuser
-	seriveUser := user.NewService(repoUser)
+	serviceUser := user.NewService(repoUser)
 	// handler user
-	handlerUser := handler.NewHandler(seriveUser)
+	handlerUser := handler.NewHandler(serviceUser)
 
 	// bikin server
 	server := gin.Default()
@@ -29,6 +29,7 @@ func main() {
 	// bikin endpoint
 	server.POST("/api/register", handlerUser.RegisterUser)
 	server.POST("/api/login", handlerUser.LoginUser)
+	server.POST("/api/profile", handlerUser.ProfilUser)
 
 	// run server
 	server.Run(":8080")
