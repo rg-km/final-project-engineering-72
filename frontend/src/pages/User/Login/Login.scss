@@ -1,23 +1,16 @@
 #login {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 70px 0;
+  height: 100vh !important;
 
-  #kolom-kiri {
-    width: 485px;
-    height: 661px;
-    left: 485px;
-    top: 211px;
-    margin-left: 207px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-
-    background: #fbfbfb;
-    .card {
-      border-color: #ffffff;
-      background: #fbfbfb;
-      padding-top: 85px;
-      .card-body {
-        .masuk {
+  @media (max-width: 1025px) {
+    height: 200vh !important;
+  }
+  .card {
+    padding: 81px 0 !important;
+    margin-top: 140px;
+    .card-body {
+      form {
+        .Masuk {
           font-family: "PT Sans";
           font-style: normal;
           font-weight: 700;
@@ -25,122 +18,73 @@
           //   line-height: 140.62%;
           /* or 51px */
 
-          padding-top: 5px 0;
-
           color: #242f9b;
-
-          margin-bottom: 21px;
         }
         .form-label {
           font-family: "Rubik";
           font-style: normal;
           font-weight: 500;
-          font-size: 20px;
+          font-size: 15px;
           /* or 28px */
+          padding-top: 20px;
           color: #000000;
         }
         .form-control {
           background: #d9d9d9;
         }
-        .btn-daftar {
-          background: #242f9b;
-          border-radius: 4px;
-
-          font-family: "PT Sans";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 140.62%;
-          width: 153px;
-          height: 61px;
-          /* or 34px */
-
-          color: #ffffff;
-          position: absolute;
-          top: 478px;
-          left: 155px;
-        }
-        // .btn {
-        //   position: absolute;
-        //   top: 478px;
-        //   left: 155px;
-        // }
-        .teks-bawah {
-          .form-label-bawah {
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            // line-height: 140.62%;
-            /* or 22px */
-            margin-top: 100px;
-            margin-left: 95px;
-          }
-          .teks-bawah1 {
-            font-family: "Rubik";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            // line-height: 140.62%;
-            /* or 22px */
-          }
-        }
+      }
+      .btn-masuk {
+        background: #242f9b;
+        border-radius: 4px;
+        font-family: "PT Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140.62%;
+        // width: 153px;
+        // height: 61px;
+        /* or 34px */
+        color: #ffffff;
+        margin-top: 21px;
+      }
+      .btn-masuk:hover {
+        color: #fff;
+        background-color: #1d2780;
+        transition: 0.5s ease;
+      }
+      .teks-bawah {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140.62%;
+        /* or 22px */
+        color: #000000;
+        margin-top: 21px;
       }
     }
   }
   .watermark {
-    padding-top: 150px;
+    // padding-top: 70px;
     // margin-top: 100px;
     .watermark-kiri {
       font-family: "PT Sans";
       font-style: normal;
       font-weight: 700;
-      font-size: 32px;
+      font-size: 20px;
       line-height: 41px;
-      margin-bottom: 46px;
+      // margin-bottom: 46px;
       color: #fcfcfc;
     }
     .watermark-kanan {
       font-family: "Rubik";
       font-style: normal;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 15px;
       line-height: 140.62%;
       /* or 28px */
 
       color: #fcfcfc;
-    }
-  }
-  #kolom-kanan {
-    width: 441px;
-    height: 661px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-    background: #ffffff;
-    img {
-      padding-top: 141px;
-      padding-bottom: 158px;
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    padding-top: 10px;
-    #kolom-kiri {
-      margin-left: 1px;
-    }
-    form {
-      .btn {
-        margin-left: -60px;
-      }
-      .teks-bawah {
-        margin-left: -60px;
-      }
-      .masuk {
-        margin-top: -5px;
-      }
-    }
-    #kolom-kanan {
-      margin-right: 60px;
     }
   }
 }

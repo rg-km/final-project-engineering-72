@@ -1,5 +1,5 @@
 .data-profil {
-  padding: 400px 0;
+  padding: 5rem 0;
 }
 
 .data-profil .card {
@@ -39,7 +39,7 @@
 }
 
 .data-profil .card .card-body .form-select {
-  background: #d9d9d9;
+  background-color: #d9d9d9;
 }
 
 .data-profil .card .card-body .btn-submit {

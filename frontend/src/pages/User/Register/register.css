@@ -1,95 +1,70 @@
 #register {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 50px 0;
+  height: 100vh !important;
 }
 
-#register #kolom-utama {
-  width: 485px;
-  height: 661px;
-  left: 485px;
-  top: 211px;
-  margin-left: 207px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  background: #fbfbfb;
+@media (max-width: 1025px) {
+  #register {
+    height: 200vh !important;
+  }
 }
 
-#register #kolom-utama .card {
-  border-color: #ffffff;
-  background: #fbfbfb;
-  padding-top: 85px;
+#register .card {
+  padding: 81px 0 !important;
+  margin-top: 100px;
 }
 
-#register #kolom-utama .card .card-body .daftar {
+#register .card .card-body form .daftar {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   /* or 51px */
-  padding-top: 5px 0;
   color: #242f9b;
-  margin-top: -50px;
-  margin-bottom: 50px;
 }
 
-#register #kolom-utama .card .card-body .form-label {
+#register .card .card-body form .form-label {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 15px;
   /* or 28px */
   color: #000000;
 }
 
-#register #kolom-utama .card .card-body .form-control {
+#register .card .card-body form .form-control {
   background: #d9d9d9;
-  border-radius: 10px;
 }
 
-#register #kolom-utama .card .card-body .btn-daftar {
+#register .card .card-body .btn-daftar {
   background: #242f9b;
   border-radius: 4px;
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 140.62%;
-  width: 153px;
-  height: 61px;
   /* or 34px */
   color: #ffffff;
-  position: absolute;
-  top: 478px;
-  left: 155px;
+  margin-top: 21px;
 }
 
-#register #kolom-utama .card .card-body .btn-daftar:hover {
+#register .card .card-body .btn-daftar:hover {
   color: #fff;
   background-color: #1d2780;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
-#register #kolom-utama .card .card-body .teks-bawah .form-label-bawah {
+#register .card .card-body .teks-bawah {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  line-height: 140.62%;
   /* or 22px */
-  margin-top: 100px;
-  margin-left: 95px;
-}
-
-#register #kolom-utama .card .card-body .teks-bawah .teks-bawah1 {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  /* or 22px */
-}
-
-#register .watermark {
-  padding-top: 80px;
+  color: #000000;
+  margin-top: 21px;
 }
 
 #register .watermark .watermark-kiri {
@@ -98,7 +73,6 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 41px;
-  margin-bottom: 46px;
   color: #fcfcfc;
 }
 
@@ -110,39 +84,5 @@
   line-height: 140.62%;
   /* or 28px */
   color: #fcfcfc;
-}
-
-#register #kolom-kedua {
-  width: 441px;
-  height: 661px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background: #ffffff;
-}
-
-#register #kolom-kedua img {
-  padding-top: 141px;
-  padding-bottom: 158px;
-}
-
-@media only screen and (max-width: 600px) {
-  #register {
-    padding-top: 1px;
-  }
-  #register #kolom-utama {
-    margin-left: -2px;
-  }
-  #register form .btn {
-    margin-left: -60px;
-  }
-  #register form .teks-bawah {
-    margin-left: -60px;
-  }
-  #register form .masuk {
-    margin-top: -5px;
-  }
-  #register #kolom-kedua {
-    margin-right: 60px;
-  }
 }
 /*# sourceMappingURL=register.css.map */

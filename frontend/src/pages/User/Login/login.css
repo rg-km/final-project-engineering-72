@@ -1,95 +1,79 @@
 #login {
   background: linear-gradient(135deg, #5a64f1 0%, #144560 100%);
-  padding: 70px 0;
+  height: 100vh !important;
 }
 
-#login #kolom-kiri {
-  width: 485px;
-  height: 661px;
-  left: 485px;
-  top: 211px;
-  margin-left: 207px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  background: #fbfbfb;
+@media (max-width: 1025px) {
+  #login {
+    height: 200vh !important;
+  }
 }
 
-#login #kolom-kiri .card {
-  border-color: #ffffff;
-  background: #fbfbfb;
-  padding-top: 85px;
+#login .card {
+  padding: 81px 0 !important;
+  margin-top: 140px;
 }
 
-#login #kolom-kiri .card .card-body .masuk {
+#login .card .card-body form .Masuk {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   /* or 51px */
-  padding-top: 5px 0;
   color: #242f9b;
-  margin-bottom: 21px;
 }
 
-#login #kolom-kiri .card .card-body .form-label {
+#login .card .card-body form .form-label {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 15px;
   /* or 28px */
+  padding-top: 20px;
   color: #000000;
 }
 
-#login #kolom-kiri .card .card-body .form-control {
+#login .card .card-body form .form-control {
   background: #d9d9d9;
 }
 
-#login #kolom-kiri .card .card-body .btn-daftar {
+#login .card .card-body .btn-masuk {
   background: #242f9b;
   border-radius: 4px;
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 140.62%;
-  width: 153px;
-  height: 61px;
   /* or 34px */
   color: #ffffff;
-  position: absolute;
-  top: 478px;
-  left: 155px;
+  margin-top: 21px;
 }
 
-#login #kolom-kiri .card .card-body .teks-bawah .form-label-bawah {
+#login .card .card-body .btn-masuk:hover {
+  color: #fff;
+  background-color: #1d2780;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+#login .card .card-body .teks-bawah {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  line-height: 140.62%;
   /* or 22px */
-  margin-top: 100px;
-  margin-left: 95px;
-}
-
-#login #kolom-kiri .card .card-body .teks-bawah .teks-bawah1 {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  /* or 22px */
-}
-
-#login .watermark {
-  padding-top: 150px;
+  color: #000000;
+  margin-top: 21px;
 }
 
 #login .watermark .watermark-kiri {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 41px;
-  margin-bottom: 46px;
   color: #fcfcfc;
 }
 
@@ -97,43 +81,9 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 140.62%;
   /* or 28px */
   color: #fcfcfc;
-}
-
-#login #kolom-kanan {
-  width: 441px;
-  height: 661px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background: #ffffff;
-}
-
-#login #kolom-kanan img {
-  padding-top: 141px;
-  padding-bottom: 158px;
-}
-
-@media only screen and (max-width: 600px) {
-  #login {
-    padding-top: 10px;
-  }
-  #login #kolom-kiri {
-    margin-left: 1px;
-  }
-  #login form .btn {
-    margin-left: -60px;
-  }
-  #login form .teks-bawah {
-    margin-left: -60px;
-  }
-  #login form .masuk {
-    margin-top: -5px;
-  }
-  #login #kolom-kanan {
-    margin-right: 60px;
-  }
 }
 /*# sourceMappingURL=Login.css.map */
