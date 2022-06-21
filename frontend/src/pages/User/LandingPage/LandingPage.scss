@@ -1,0 +1,236 @@
+.my-btn {
+  display: block;
+  width: 220px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prim-btn {
+  color: #fff;
+  background-color: #242F9B;
+  border: 2px solid #242F9B;
+  transition: 0.2s ease;
+}
+.prim-btn:hover {
+  color: #fff;
+  background-color: #1d2780;
+  transition: 0.5s ease;
+}
+.prim-btn:active {
+  background-color: #131a58;
+  transition: 0.1s ease;
+}
+.sec-btn {
+  background: #fff;
+  color: #242F9B;
+  border: 2px solid #242F9B;
+  transition: 0.2s ease;
+}
+.sec-btn:hover {
+  color: #242F9B;
+  background: #f1f1f1;
+  transition: 0.5s ease;
+}
+.sec-btn:active {
+  background-color: #e5e5e5;
+  transition: 0.1s ease;
+}
+.my-btn:focus {
+  border: none;
+  box-shadow: 0 0 0 5px #24309b7c;
+  transition: 0.3s ease;
+}
+@media screen and (max-width: 620px) {
+  .my-btn {
+    display: block;
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.landing-wrapper {
+  margin-top: 88px;
+  .landing-jumbotron {
+    background: #fff;  
+    .jumbotron-container {
+      height: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;      
+      .jumbotron-text {
+        max-width: 640px;
+        h1 {
+          font-size: 56px ;
+        }
+        p {
+          margin: 50px 0 55px 0;
+        }
+      }
+      .jumbotron-buttons {
+        max-width: 480px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;       
+      }
+      .jumbotron-pic {
+        max-width: 480px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    .jumbotron-container {
+      flex-direction: column;
+      .jumbotron-text {          
+        h1 {
+          font-size: 32px;
+        }
+      }
+      .jumbotron-buttons {
+        .my-btn {
+          width: 145px;
+        }
+      }
+    }
+  }
+
+  .landing-cari {
+    background: #242F9B;
+    color: #fff;
+    .cari-container {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h1, p {
+        max-width: 860px;
+      }
+
+      p {
+        margin: 10px 0 30px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    .cari-container {
+      .my-btn {
+        width: 180px;
+      }
+    }
+  }
+
+  .landing-menu {
+    .menu-container {
+      display: flex;
+      .menu-desc, .menu-pic {
+        width: 50vw;
+        height: 600px;
+        .containers {
+          height: 600px;
+          padding-left: 10vw;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          max-width: 530px;
+          h1 {
+            font-size: 36px;
+          }
+          p {
+            margin: 40px 0 24px 0;
+          }
+        }
+        .float-end {
+          padding-left: 0;
+          padding-right: 10vw;
+        }
+      }
+      .menu-desc {
+        background: #fff;
+      }
+      .menu-pic {
+        background: #000646;
+      }
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    .desc-first {
+      .menu-container {
+        flex-direction: column-reverse;
+      }
+    }
+    .menu-container {
+      flex-direction: column;
+      .menu-desc {
+        .containers {
+          max-width: 290px !important;
+          padding: 0 12px;
+          height: 400px;
+          p {
+            width: 210px;
+          }
+          .my-btn {
+            width: 180px;
+          }
+        }
+      }
+      .menu-pic {
+        width: 100vw !important;
+      }  
+    }
+  }
+
+  .landing-extras {
+    background: #DBDFFD;
+    .extras-container {
+      height: 250px;
+      display: flex;
+      align-items: center;
+      align-items: center;
+      justify-content: space-between;
+      .extras-desc {
+        p {
+          margin-top: 20px;
+          font-size: 28px;
+        }
+      }
+      .extras-buttons {
+        width: 485px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    .landing-extras {
+      .extras-container {
+        justify-content: center;
+        flex-direction: column;
+        .extras-desc {
+          p {
+            font-size: 20px;
+          }
+        }
+        .extras-buttons {
+          max-width: 315px;
+          justify-content: space-around;
+          .my-btn {
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+}
