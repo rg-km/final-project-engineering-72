@@ -2,7 +2,7 @@ import React, { useEffect,useState } from "react";
 import Sidebar from "../../../Components/Sidebar/Sidebar";
 import "./Beasiswa.css";
 
-export default function Beasiswa() {
+export default function Apply_beasiswa() {
     useEffect(() => {
         document.title = "Dashboard - Subaku";
       }, []);
@@ -17,7 +17,7 @@ export default function Beasiswa() {
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Data Master Beasiswa</li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Pendaftaran Beasiswa</li>
                         </ol>
                     </nav>
                     <div className="main-content">
@@ -25,9 +25,8 @@ export default function Beasiswa() {
                             <div className="container-fluid">
                                 <p>
                                     <i className="fa fa-table" aria-hidden="true"></i>
-                                    <span className="navbar-brand">Tabel Beasiswa</span>
+                                    <span className="navbar-brand">Tabel Pendaftaran Beasiswa</span>
                                 </p>
-                                <button className="btn btn-outline-primary" type="button">Tambah Data</button>
                             </div>
                         </nav>
                         <div className="user-setting">
@@ -60,8 +59,8 @@ export default function Beasiswa() {
                                     <tr>
                                         <th>No</th>
                                         <th>Jenis Beasiswa</th>
-                                        <th>Sumber Beasiswa</th>
-                                        <th>Tanggal Penyaluran</th>
+                                        <th>NISN</th>
+                                        <th>Nama Pendaftar</th>
                                         <th>Nominal</th>
                                         <th>Keterangan</th>
                                         <th>Aksi</th>
@@ -71,10 +70,10 @@ export default function Beasiswa() {
                                     <tr>
                                         <td>1</td>
                                         <td>Beasiswa Pintar</td>
-                                        <td>PT Gono Gini</td>
-                                        <td>10 januari 2023</td>
+                                        <td>1234567890</td>
+                                        <td>Anne Rose</td>
                                         <td>1200000</td>
-                                        <td>Proses</td>
+                                        <td>Lolos</td>
                                         <td>
                                             <button  type="button" className="btn"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                             <button type="button" className="btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
