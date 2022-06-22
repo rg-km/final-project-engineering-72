@@ -70,7 +70,6 @@ func (s *service) LoginUser(input InputLogin) (User, error) {
 	}
 	return users, nil
 }
-
 // func data_profil
 func (s *service) ProfilUser(input InputProfil) (User, error) {
 
