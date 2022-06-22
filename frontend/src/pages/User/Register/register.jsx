@@ -1,6 +1,6 @@
 import React from "react";
 import "./register.css";
-import gambar from "..//..//..//Assets//Login//subaku-logo.png";
+import gambar from "..//..//..//assets//Login//subaku-logo.png";
 
 export default function register() {
   return (

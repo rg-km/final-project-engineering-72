@@ -5,16 +5,17 @@
     border-radius: 11px;
     margin-top: -15px;
     .card-body {
-      .card-title {
+      p {
         font-family: "PT Sans";
         font-style: normal;
         font-weight: 700;
         font-size: 36px;
-        line-height: 140.62%;
+        // line-height: 140.62%;
         /* or 51px */
         color: #242f9b;
-        padding-left: 563px;
-        padding-top: 10px;
+        // margin-left: 100px;
+        // padding-top: 10px;
+        // text-align: center;
       }
       .row {
         padding-top: 60px;

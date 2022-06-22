@@ -6,7 +6,7 @@ export default function () {
     <div className="data-profil">
       <div className="card ">
         <div className="card-body">
-          <div className="card-title">Data Profil</div>
+          <p className="text-center">Data Profil</p>
           <form>
             <div className="row">
               <div className="col-md-5 mx-auto ">

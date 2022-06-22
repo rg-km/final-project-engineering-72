@@ -1,6 +1,6 @@
 import React from "react";
 import "./login.css";
-import gambar from "../../../Assets/Login/subaku-logo.png";
+import gambar from "../../../assets/Login/subaku-logo.png";
 
 export default function login() {
   return (
