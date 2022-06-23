@@ -62,10 +62,40 @@ func (h *handlerUser) LoginUser(c *gin.Context) {
 		})
 		return
 	}
-
 	// sukses
 	c.JSON(http.StatusOK, gin.H{
 		"message": "login berhasil",
+	})
+
+}
+
+// handler untuk isi data profil
+func (h *handlerUser) ProfilUser(c *gin.Context) {
+	// insiasi struct inputlogin
+	var input user.InputProfil
+
+	// binding dengan data yang diadapat dari request
+	err := c.ShouldBindJSON(&input)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"message": "binding data error",
+			"status":  "gagal",
+		})
+		return
+	}
+
+	// panggil function register
+	_, err = h.service.ProfilUser(input)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"message": err.Error(),
+			"status":  "gagal",
+		})
+		return
+	}
+	// sukses
+	c.JSON(http.StatusOK, gin.H{
+		"message": "input profil berhasil",
 	})
 
 }
