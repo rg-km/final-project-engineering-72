@@ -44,13 +44,13 @@
 }
 @media screen and (max-width: 620px) {
   .my-btn {
-    display: block;
-    width: 80px;
-    height: 50px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block !important;
+    width: 80px !important;
+    height: 50px !important;
+    border-radius: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
@@ -89,12 +89,12 @@
       flex-direction: column;
       .jumbotron-text {          
         h1 {
-          font-size: 32px;
+          font-size: 32px !important;
         }
       }
       .jumbotron-buttons {
         .my-btn {
-          width: 145px;
+          width: 145px !important;
         }
       }
     }
@@ -107,11 +107,13 @@
       height: 300px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: center !important;
+      justify-content: center !important;
 
       h1, p {
+        color: #fff;
         max-width: 860px;
+        text-align: center;
       }
 
       p {
@@ -124,7 +126,7 @@
   @media screen and (max-width: 620px) {
     .cari-container {
       .my-btn {
-        width: 180px;
+        width: 180px !important;
       }
     }
   }
@@ -167,7 +169,7 @@
   @media screen and (max-width: 620px) {
     .desc-first {
       .menu-container {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse !important;
       }
     }
     .menu-container {
@@ -175,13 +177,13 @@
       .menu-desc {
         .containers {
           max-width: 290px !important;
-          padding: 0 12px;
-          height: 400px;
+          padding: 0 12px !important;
+          height: 400px !important;
           p {
-            width: 210px;
+            width: 210px !important;
           }
           .my-btn {
-            width: 180px;
+            width: 180px !important;
           }
         }
       }
@@ -209,6 +211,9 @@
         width: 485px;
         display: flex;
         justify-content: space-between;
+        .sec-btn {
+          background: #DBDFFD;
+        }
       }
     }
   }
@@ -216,18 +221,18 @@
   @media screen and (max-width: 620px) {
     .landing-extras {
       .extras-container {
-        justify-content: center;
-        flex-direction: column;
+        justify-content: center !important;
+        flex-direction: column !important;
         .extras-desc {
           p {
-            font-size: 20px;
+            font-size: 20px !important;
           }
         }
         .extras-buttons {
-          max-width: 315px;
-          justify-content: space-around;
+          max-width: 315px !important;
+          justify-content: space-around !important;
           .my-btn {
-            width: 130px;
+            width: 130px !important;
           }
         }
       }

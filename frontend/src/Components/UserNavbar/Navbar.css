@@ -2,61 +2,51 @@
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12.2px);
   -webkit-backdrop-filter: blur(12.2px);
-  -webkit-transition: 0.6s ease-in;
   transition: 0.6s ease-in;
 }
 
-nav {
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  background: #fff;
+.no-shadow {
+  box-shadow: unset !important;
 }
 
-nav img {
+.user-navbar {
+  transition: 0.5s ease;
+  position: fixed !important;
+}
+.user-navbar img {
   height: 60px;
   width: auto;
 }
-
-nav .nav-right li {
+.user-navbar .nav-right li {
   margin: 0 10px;
 }
-
-nav .nav-right .login {
+.user-navbar .nav-right .login {
   color: #242F9B;
 }
-
-nav .nav-right .login:hover {
+.user-navbar .nav-right .login:hover {
   color: #757dd3;
-  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-
-nav .nav-right .register {
+.user-navbar .nav-right .register {
   color: #fff;
   background-color: #242F9B;
   padding-left: 30px !important;
   padding-right: 30px !important;
   border-radius: 5px;
 }
-
-nav .nav-right .register:hover {
+.user-navbar .nav-right .register:hover {
   color: #fff;
   background-color: #1d2780;
-  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-
-nav .nav-right .register:focus {
+.user-navbar .nav-right .register:focus {
   border: none;
-  -webkit-box-shadow: 0 0 0 5px #24309b7c;
-          box-shadow: 0 0 0 5px #24309b7c;
-  -webkit-transition: 0.3s ease;
+  box-shadow: 0 0 0 5px #24309b7c;
   transition: 0.3s ease;
 }
-
-nav .nav-right .prim-btn:focus {
+.user-navbar .nav-right .prim-btn:focus {
   background-color: #131a58;
-  -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
 }
+
 /*# sourceMappingURL=Navbar.css.map */
