@@ -4,13 +4,13 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [scrollPos, setScrollPos] = useState("");
+  const [scrollPos, setScrollPos] = useState("no-shadow");
 
   const scrollHandler = () => {
     if (window.scrollY > 2) {
       setScrollPos("shadow navbar-glass");
     } else {
-      setScrollPos("");
+      setScrollPos("no-shadow");
     }
   };
 
@@ -19,7 +19,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrollPos}`}>
+    <nav className={`user-navbar navbar navbar-expand-lg fixed-top ${scrollPos}`}>
       <div className="container">
         <a className="navbar-brand" href="/">
           <img
