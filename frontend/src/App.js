@@ -25,6 +25,7 @@ export const App = () => {
           path="/PengumumanBeasiswa"
           element={<PengumumanBeasiswa />}
         ></Route>
+        <Route path="/DaftarBeasiswa" element={<DaftarBeasiswa />}></Route>
       </Routes>
     </BrowserRouter>
   );
