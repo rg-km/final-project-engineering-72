@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./Components/UserNavbar/Navbar";
 import LandingPage from "./pages/User/LandingPage/LandingPage";
 import Footer from "./Components/UserFooter/Footer";
+import DaftarBeasiswa from "./pages/User/DaftarBeasiswa/DaftarBeasiswa";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React from "react";
 import Dashboard from "./pages/Admin/Dashboard/dashboard";
