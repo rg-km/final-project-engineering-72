@@ -1,9 +1,10 @@
-import React from "react";
+import React from "react"
 import "./Sidebar.css";
 
 function Sidebar() {
+	const [active, setActive] = useState(0);
   return (
-    <nav className="sidebar card py-2 mb-4">
+		<nav className="sidebar card py-2 mb-4">
       <ul className="nav flex-column" id="nav_accordion">
         <li className="header">
           <img
