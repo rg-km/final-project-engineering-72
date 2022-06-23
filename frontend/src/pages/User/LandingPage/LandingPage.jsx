@@ -10,7 +10,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <>
+    <div>
       <Navbar />
       <div className="landing-wrapper">
         <section className="landing-jumbotron">
@@ -119,6 +119,6 @@ export default function LandingPage() {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

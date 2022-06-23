@@ -10,14 +10,14 @@ export default function ProsedurBeasiswa() {
       <Navbar />
       <div className="background">
         <div className="Prosedur-beasiswa">
-          <div className="container">
-            <div className="card">
+          <div className="container-prosedur">
+            <div className="card-prosedur">
               <div className="card-header bg-transparent border-0">
                 <h1 className="judul text-center">
                   Prosedur Pendaftaran Beasiswa
                 </h1>
               </div>
-              <div className="card-body ">
+              <div className="card-body-prosedur ">
                 <h5>1. Lengkapi Data Profil</h5>
                 <p>
                   Isi data diri, informasi sekolah, daftar perlombaan dan daftar

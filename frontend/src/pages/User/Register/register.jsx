@@ -17,7 +17,7 @@ export default function Register() {
         "http://localhost:8080/api/register",
         {
           email: email,
-          Username: username,
+          username: username,
           password: password,
         },
         {
