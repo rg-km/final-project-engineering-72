@@ -57,7 +57,7 @@
     display: inline-flex;
  }
 
- .footer {
+ .footer__sidebar {
     background-color: #646FD4;
     text-align: center;
     left: 50px;

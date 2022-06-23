@@ -1,6 +1,7 @@
 import React from "react";
 import "./login.css";
 import gambar from "../../../assets/Login/subaku-logo.png";
+import { Link } from "react-router-dom";
 
 export default function login() {
   return (
@@ -44,12 +45,14 @@ export default function login() {
                         </div>
                       </form>
                       <center>
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-masuk "
-                        >
-                          Masuk
-                        </button>
+                        <Link to="/">
+                          <button
+                            type="submit"
+                            className="btn btn-primary btn-masuk "
+                          >
+                            Masuk
+                          </button>
+                        </Link>
                       </center>
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
