@@ -9,6 +9,7 @@ import Footer from "./Components/UserFooter/Footer";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React from "react";
 import Dashboard from "./pages/Admin/Dashboard/dashboard";
+import PengumumanBeasiswa from "./pages/User/PengumumanBeasiswa/PengumumanBeasiswa";
 
 export const App = () => {
   return (
@@ -19,6 +20,10 @@ export const App = () => {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/profil" element={<Profil />}></Route>
         <Route path="/Dashboard" element={<Dashboard />}></Route>
+        <Route
+          path="/PengumumanBeasiswa"
+          element={<PengumumanBeasiswa />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

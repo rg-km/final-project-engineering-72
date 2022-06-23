@@ -1,3 +1,17 @@
-div {
-  padding: 60px;
+h1{
+  font-family: 'PT Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 140.62%;
+margin-bottom: 20px;
+/* or 68px */
+
+
+color: #242E92;
+
+
+}
+.btn {
+  background: #1E289B;
 }
