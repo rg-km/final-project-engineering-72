@@ -1,8 +1,38 @@
 import React from "react";
-import "./register.css";
+import "./Register.css";
 import gambar from "..//..//..//assets//Login//subaku-logo.png";
+import axios from "axios";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function register() {
+export default function Register() {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let response = await axios.post(
+        "http://localhost:8080/api/register",
+        {
+          email: email,
+          Username: username,
+          password: password,
+        },
+        {
+          headers: {
+            Accept: "/",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <section id="register">
@@ -13,7 +43,7 @@ export default function register() {
                 <div className="card-body ">
                   <div className="row">
                     <div className="col-md-6 mx-auto my-auto ">
-                      <form>
+                      <form onSubmit={handleSubmit}>
                         <div className="daftar text-center ">Daftar</div>
                         <div className="mb-2">
                           <label
@@ -25,7 +55,9 @@ export default function register() {
                           <input
                             type="email"
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="email"
+                            name="email"
+                            onChange={(e) => setEmail(e.target.value)}
                             aria-describedby="emailHelp"
                           />
                         </div>
@@ -39,7 +71,9 @@ export default function register() {
                           <input
                             type="email"
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="username"
+                            name="username"
+                            onChange={(e) => setUsername(e.target.value)}
                             aria-describedby="emailHelp"
                           />
                         </div>
@@ -53,17 +87,21 @@ export default function register() {
                           <input
                             type="password"
                             className="form-control"
-                            id="exampleInputPassword1"
+                            id="password"
+                            name="password"
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </div>
                       </form>
                       <center>
+                        {/* <Link to="/login"> */}
                         <button
                           type="submit"
                           className="btn btn-primary btn-daftar "
                         >
                           Daftar
                         </button>
+                        {/* </Link> */}
                       </center>
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">

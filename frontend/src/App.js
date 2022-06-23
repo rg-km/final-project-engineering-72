@@ -6,18 +6,22 @@ import "./App.css";
 import Navbar from "./Components/UserNavbar/Navbar";
 import LandingPage from "./pages/User/LandingPage/LandingPage";
 import Footer from "./Components/UserFooter/Footer";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import React from "react";
+import Dashboard from "./pages/Admin/Dashboard/dashboard";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      {/* <Login /> */}
-      {/* <Register /> */}
-      <Profil />
-      {/* <Navbar />
-      <LandingPage />
-      <Footer /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<LandingPage />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/profil" element={<Profil />}></Route>
+        <Route path="/Dashboard" element={<Dashboard />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,5 +1,5 @@
 .footer {
-  background: #242F9B;
+  background: #242f9b;
   padding-top: 8vh;
 }
 
@@ -20,7 +20,9 @@
   color: #fff;
 }
 
-.footer .container h4, .footer .container p, .footer .container a {
+.footer .container h4,
+.footer .container p,
+.footer .container a {
   color: #e4e4e4;
 }
 
