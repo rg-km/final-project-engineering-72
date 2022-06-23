@@ -1,7 +1,10 @@
-import React, { Component } from 'react'
-import { useEffect, useState } from "react"
-import FormListBeasiswa from '../../../Components/FormDaftar/FormListBeasiswa'
-import "./DaftarBeasiswa.css"
+import React, { Component } from "react";
+import { useEffect, useState } from "react";
+import FormListBeasiswa from "../../../Components/FormDaftar/FormListBeasiswa";
+import "./DaftarBeasiswa.css";
+import Navbar from "../../../Components/UserNavbar/Navbar";
+import Footer from "../../../Components/UserFooter/Footer";
+import { Link } from "react-router-dom";
 
 export default function DaftarBeasiswa() {
   const beasiswaList = [
@@ -32,19 +35,21 @@ export default function DaftarBeasiswa() {
     {
       jenisBeasiswa: "Beasiswa Penelitian",
     },
-  ]
+  ];
   return (
-    <div className="daftar-bea-wrapper container">
-      <section className="daftar-bea-title">
-        <h1>Daftar Beasiswa</h1>
-      </section>
-      <section className="daftar-bea-list row">
-        {beasiswaList.map((item) => {
-          return (
-            <FormListBeasiswa jenisBeasiswa={item.jenisBeasiswa}/>
-          )
-        })}
-      </section>
+    <div>
+      <Navbar />
+      <div className="daftar-bea-wrapper container">
+        <section className="daftar-bea-title ">
+          <h1 className="text-center ">Daftar Beasiswa</h1>
+        </section>
+        <section className="daftar-bea-list row mb-5">
+          {beasiswaList.map((item) => {
+            return <FormListBeasiswa jenisBeasiswa={item.jenisBeasiswa} />;
+          })}
+        </section>
+      </div>
+      <Footer />
     </div>
-  )
+  );
 }
