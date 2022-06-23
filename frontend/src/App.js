@@ -11,6 +11,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React from "react";
 import Dashboard from "./pages/Admin/Dashboard/dashboard";
 import PengumumanBeasiswa from "./pages/User/PengumumanBeasiswa/PengumumanBeasiswa";
+import ProsedurBeasiswa from "./pages/User/ProsedurBeasiswa/ProsedurBeasiswa";
 
 export const App = () => {
   return (
@@ -26,6 +27,7 @@ export const App = () => {
           element={<PengumumanBeasiswa />}
         ></Route>
         <Route path="/DaftarBeasiswa" element={<DaftarBeasiswa />}></Route>
+        <Route path="/ProsedurBeasiswa" element={<ProsedurBeasiswa />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -44,9 +44,6 @@ export default function Navbar() {
               <Link to="/DaftarBeasiswa" className="nav-link">
                 Daftar Beasiswa
               </Link>
-              {/* <a className="nav-link" href="#">
-                List Beasiswa
-              </a> */}
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">

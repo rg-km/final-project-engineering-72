@@ -2,8 +2,35 @@ import React from "react";
 import "./login.css";
 import gambar from "../../../assets/Login/subaku-logo.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
-export default function login() {
+export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let response = await axios.get(
+        "http://localhost:8080/api/register",
+        {
+          Username: username,
+          password: password,
+        },
+        {
+          headers: {
+            Accept: "/",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <section id="login">
@@ -14,7 +41,7 @@ export default function login() {
                 <div className="card-body ">
                   <div className="row">
                     <div className="col-md-6 mx-auto my-auto ">
-                      <form>
+                      <form onSubmit={handleSubmit}>
                         <div className="Masuk text-center ">Masuk</div>
                         <div className="mb-4">
                           <label
@@ -26,8 +53,10 @@ export default function login() {
                           <input
                             type="email"
                             className="form-control"
-                            id="exampleInputEmail1"
+                            id="username"
+                            name="username"
                             aria-describedby="emailHelp"
+                            onChange={(e) => setUsername(e.target.value)}
                           />
                         </div>
                         <div className="mb-4">
@@ -40,7 +69,9 @@ export default function login() {
                           <input
                             type="password"
                             className="form-control"
-                            id="exampleInputPassword1"
+                            id="password"
+                            name="password"
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </div>
                       </form>
