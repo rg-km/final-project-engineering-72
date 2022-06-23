@@ -2,10 +2,14 @@ import React from "react";
 import "./Register.css";
 import gambar from "..//..//..//assets//Login//subaku-logo.png";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Register() {
+  useEffect(() => {
+    document.title = "Subaku";
+  }, []);
+
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -106,7 +110,7 @@ export default function Register() {
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
                           Sudah punya akun?
-                          <a href="#" className="teks-bawah1 ">
+                          <a href="/login" className="teks-bawah1 ">
                             Masuk disini
                           </a>
                         </label>

@@ -7,7 +7,7 @@ export default function PengumumanBeasiswa() {
   return (
     <>
       <Navbar />
-      <div className="container my-5 pb-5">
+      <div className="container my-5 pb-5 pt-5">
         <h1 align="center">PENGUMUMAN HASIL SELEKSI BEASISWA </h1>
         <h5 align="center">Pilih Beasiswa</h5>
         <select className="form-select" aria-label="Default select example">

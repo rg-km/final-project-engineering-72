@@ -40,8 +40,8 @@ export default function DaftarBeasiswa() {
     <div>
       <Navbar />
       <div className="daftar-bea-wrapper container">
-        <section className="daftar-bea-title  ">
-          <h1 className="text-center pt-5 ">Daftar Beasiswa</h1>
+        <section className="daftar-bea-title mt-5 ">
+          <h1 className="text-center  ">Daftar Beasiswa</h1>
         </section>
         <section className="daftar-bea-list row mb-5">
           {beasiswaList.map((item) => {

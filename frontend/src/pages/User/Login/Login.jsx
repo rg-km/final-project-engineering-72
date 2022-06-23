@@ -3,9 +3,12 @@ import "./login.css";
 import gambar from "../../../assets/Login/subaku-logo.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Login() {
+  useEffect(() => {
+    document.title = "Subaku";
+  }, []);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -88,7 +91,7 @@ export default function Login() {
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
                           Belum punya akun?
-                          <a href="#" className="teks-bawah1 ">
+                          <a href="/register" className="teks-bawah1 ">
                             Daftar disini
                           </a>
                         </label>
