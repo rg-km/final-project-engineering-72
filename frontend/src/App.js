@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./Components/UserNavbar/Navbar";
 import LandingPage from "./pages/User/LandingPage/LandingPage";
 import Footer from "./Components/UserFooter/Footer";
+import DaftarBeasiswa from "./pages/User/DaftarBeasiswa/DaftarBeasiswa";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       {/* <Navbar />
       <LandingPage />
       <Footer /> */}
+      {/* <Navbar/>
+      <DaftarBeasiswa/> */}
     </div>
   );
 }
