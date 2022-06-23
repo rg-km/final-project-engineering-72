@@ -1,0 +1,194 @@
+.my-btn {
+  display: block;
+  width: 220px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.daftar-item-btn {
+  width: 100% !important;
+  height: 40px !important;
+}
+
+.prim-btn {
+  color: #fff;
+  background-color: #242F9B;
+  border: 2px solid #242F9B;
+  transition: 0.2s ease;
+}
+
+.prim-btn:hover {
+  color: #fff;
+  background-color: #1d2780;
+  transition: 0.5s ease;
+}
+
+.prim-btn:active {
+  background-color: #131a58;
+  transition: 0.1s ease;
+}
+
+.sec-btn {
+  background: #fff;
+  color: #242F9B;
+  border: 2px solid #242F9B;
+  transition: 0.2s ease;
+}
+
+.sec-btn:hover {
+  color: #242F9B;
+  background: #f1f1f1;
+  transition: 0.5s ease;
+}
+
+.sec-btn:active {
+  background-color: #e5e5e5;
+  transition: 0.1s ease;
+}
+
+.my-btn:focus {
+  border: none;
+  box-shadow: 0 0 0 5px #24309b7c;
+  transition: 0.3s ease;
+}
+
+.daftar-item {
+  margin-top: 35px;
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075), 0 2px 2px rgba(0, 0, 0, 0.075), 0 4px 4px rgba(0, 0, 0, 0.075), 0 8px 8px rgba(0, 0, 0, 0.075), 0 16px 16px rgba(0, 0, 0, 0.075);
+}
+.daftar-item .red {
+  background: linear-gradient(244deg, #c1292e, #dd8285);
+  background-size: 400% 400%;
+  color: #fffce3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+.daftar-item .green {
+  background: linear-gradient(228deg, #2de1c2, #9aecde);
+  background-size: 400% 400%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #002a2a;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 58% 0%;
+  }
+  50% {
+    background-position: 43% 100%;
+  }
+  100% {
+    background-position: 58% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 58% 0%;
+  }
+  50% {
+    background-position: 43% 100%;
+  }
+  100% {
+    background-position: 58% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 58% 0%;
+  }
+  50% {
+    background-position: 43% 100%;
+  }
+  100% {
+    background-position: 58% 0%;
+  }
+}
+.daftar-item .orange {
+  background: linear-gradient(227deg, #f9f871, #ffffe5);
+  background-size: 400% 400%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #302407;
+  -webkit-animation: AnimationName 18s ease infinite;
+  -moz-animation: AnimationName 18s ease infinite;
+  animation: AnimationName 18s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 74%;
+  }
+  50% {
+    background-position: 100% 27%;
+  }
+  100% {
+    background-position: 0% 74%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 74%;
+  }
+  50% {
+    background-position: 100% 27%;
+  }
+  100% {
+    background-position: 0% 74%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 74%;
+  }
+  50% {
+    background-position: 100% 27%;
+  }
+  100% {
+    background-position: 0% 74%;
+  }
+}
+
+/*# sourceMappingURL=FormListBeasiswa.css.map */
