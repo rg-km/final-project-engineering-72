@@ -4,13 +4,13 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [scrollPos, setScrollPos] = useState("");
+  const [scrollPos, setScrollPos] = useState("no-shadow");
 
   const scrollHandler = () => {
     if (window.scrollY > 2) {
       setScrollPos("shadow navbar-glass");
     } else {
-      setScrollPos("");
+      setScrollPos("no-shadow");
     }
   };
 
@@ -19,7 +19,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrollPos}`}>
+    <nav className={`user-navbar navbar navbar-expand-lg fixed-top ${scrollPos}`}>
       <div className="container">
         <a className="navbar-brand" href="/">
           <img
@@ -41,9 +41,12 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/DaftarBeasiswa" className="nav-link">
+                Daftar Beasiswa
+              </Link>
+              {/* <a className="nav-link" href="#">
                 List Beasiswa
-              </a>
+              </a> */}
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
