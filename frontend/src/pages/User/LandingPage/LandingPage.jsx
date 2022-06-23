@@ -46,9 +46,9 @@ export default function LandingPage() {
               Mulai mencari beragam beasiswa pilihan yang bisa Kamu daftarkan di
               Subaku.
             </p>
-            <a href="#" className="cari-btn my-btn sec-btn">
+            <Link to="/DaftarBeasiswa" className="cari-btn my-btn sec-btn">
               Cari Beasiswa
-            </a>
+            </Link>
           </div>
         </section>
         <section className="landing-menu desc-first">
@@ -60,9 +60,12 @@ export default function LandingPage() {
                   Nantikan selalu kelulusan seleksi beasiswa Kamu di halaman
                   Pengumuman Seleksi.
                 </p>
-                <a href="#" className="menu-btn my-btn sec-btn">
+                <Link
+                  to="/PengumumanBeasiswa"
+                  className="menu-btn my-btn sec-btn"
+                >
                   Lihat Pengumuman
-                </a>
+                </Link>
               </div>
             </div>
             <div className="menu-pic">
@@ -94,9 +97,12 @@ export default function LandingPage() {
                   Sebelum memilih dan mendaftar beasiswa, Kamu bisa mempelajari
                   prosedurnya terlebih dahulu di halaman Prosedur Pendaftaran.
                 </p>
-                <a href="#" className="menu-btn my-btn sec-btn">
+                <Link
+                  to="/ProsedurBeasiswa"
+                  className="menu-btn my-btn sec-btn"
+                >
                   Lihat Prosedur
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -108,12 +114,12 @@ export default function LandingPage() {
               <p>Daftar akun atau cari beasiswa sekarang!</p>
             </div>
             <div className="extras-buttons">
-              <a href="#" className="register-btn my-btn prim-btn">
+              <a href="/register" className="register-btn my-btn prim-btn">
                 Daftar Akun
               </a>
-              <a href="#" className="cari-btn my-btn sec-btn">
+              <Link to="/DaftarBeasiswa" className="cari-btn my-btn sec-btn">
                 Cari Beasiswa
-              </a>
+              </Link>
             </div>
           </div>
         </section>

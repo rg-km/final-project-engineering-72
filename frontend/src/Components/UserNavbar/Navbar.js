@@ -19,7 +19,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`user-navbar navbar navbar-expand-lg fixed-top ${scrollPos}`}>
+    <nav
+      className={`user-navbar navbar navbar-expand-lg fixed-top ${scrollPos}`}
+    >
       <div className="container">
         <a className="navbar-brand" href="/">
           <img
@@ -46,9 +48,9 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/ProsedurBeasiswa" className="nav-link">
                 Prosedur
-              </a>
+              </Link>
             </li>
             <li className="nav-item ">
               <Link to="/PengumumanBeasiswa" className="nav-link">
@@ -75,14 +77,14 @@ export default function Navbar() {
           </div> */}
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a href="#" className="nav-link login">
+                <Link to="/login" className="nav-link">
                   Masuk
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="#" className="nav-link register">
+                <Link to="/Register" className="nav-link register">
                   Daftar Akun
-                </a>
+                </Link>
               </li>
             </ul>
           </span>
