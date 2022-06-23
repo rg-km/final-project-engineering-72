@@ -5,9 +5,13 @@
   transition: 0.6s ease-in;
 }
 
-nav {
+.no-shadow {
+  box-shadow: unset !important;
+}
+
+.user-navbar {
   transition: 0.5s ease;
-  background: #fff;
+  position: fixed !important;
   img {
     height: 60px;
     width: auto;
