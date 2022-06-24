@@ -43,7 +43,7 @@ export default function ProsedurBeasiswa() {
               </p>
               <p></p>
               <img
-                className="float-right"
+                className="img-prosedur float-right"
                 src={require("../../../assets/grad-hat.png")}
                 alt=""
               />

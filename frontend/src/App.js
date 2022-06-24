@@ -13,6 +13,9 @@ import Dashboard from "./pages/Admin/Dashboard/dashboard";
 import PengumumanBeasiswa from "./pages/User/PengumumanBeasiswa/PengumumanBeasiswa";
 import ProsedurBeasiswa from "./pages/User/ProsedurBeasiswa/ProsedurBeasiswa";
 import ScrollTop from "./utils/ScrollTop";
+import Apply_beasiswa from "./pages/Admin/Beasiswa/Apply_beasiswa";
+import Beasiswa from "./pages/Admin/Beasiswa/Beasiswa";
+import Users from "./pages/Admin/User/Users";
 
 export const App = () => {
   return (
@@ -30,6 +33,9 @@ export const App = () => {
         ></Route>
         <Route path="/DaftarBeasiswa" element={<DaftarBeasiswa />}></Route>
         <Route path="/ProsedurBeasiswa" element={<ProsedurBeasiswa />}></Route>
+        <Route path="/Apply_beasiswa" element={<Apply_beasiswa />}></Route>
+        <Route path="/Beasiswa" element={<Beasiswa />}></Route>
+        <Route path="/Users" element={<Users />}></Route>
       </Routes>
     </BrowserRouter>
   );
