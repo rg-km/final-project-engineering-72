@@ -52,24 +52,18 @@ func (s *service) RegisterUser(input InputRegister) (User, error) {
 // func login
 func (s *service) LoginUser(input InputLogin) (User, error) {
 	// tangkap data login setelah register
-	username := input.Username
 	password := input.Password
 
 	// cek apakah username daan password ada apa ngga di db
-	user, _ := s.repository.FindUserByUsername(username)
-	users, _ := s.repository.FindUserByPassword(password)
-
-	// jika username sesuai
-	if user.Id != 0 {
-		return user, errors.New("username sudah valid")
-	}
+	user, _ := s.repository.FindUserByPassword(password)
 
 	//jika password seuai
 	if user.Id != 0 {
-		return users, errors.New("password sudah valid")
+		return user, errors.New("password sudah valid")
 	}
-	return users, nil
+	return user, nil
 }
+
 // func data_profil
 func (s *service) ProfilUser(input InputProfil) (User, error) {
 
