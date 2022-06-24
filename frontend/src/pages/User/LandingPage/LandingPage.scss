@@ -80,6 +80,9 @@
       }
       .jumbotron-pic {
         max-width: 480px;
+        img {
+          width: unset;
+        }
       }
     }
   }
@@ -162,6 +165,9 @@
       }
       .menu-pic {
         background: #000646;
+        img {
+          width: unset;
+        }
       }
     }
   }
