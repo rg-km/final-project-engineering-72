@@ -9,12 +9,13 @@ export default function Profil() {
     <div>
       <Navbar />
       <div className="kolom-data-profil">
-        <div className="container" id="kolom-profil">
+        <div className="container mt-5" id="kolom-profil">
           <div className="row">
             <DataProfil />
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
