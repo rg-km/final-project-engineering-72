@@ -56,26 +56,27 @@ export default function Navbar() {
               <Link to="/PengumumanBeasiswa" className="nav-link">
                 Pengumuman
               </Link>
-              {/* <a className="nav-link" href="/PengumumanBeasiswa">
-                Pengumuman
-              </a> */}
             </li>
           </ul>
           <span className="nav-right navbar-text">
-            {/* <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <ul className="navbar-nav">
+              <li className="nav-item dropdown">
+                <a className="nav-username nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Nama User
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Data Profil</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar</a></li>
+                <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li>
+                    <Link to="/profil" className="user-nav-dropdown-item dropdown-item">
+                      <i className="fa-solid fa-user"></i> Data Profil
+                    </Link>
+                  </li>
+                  <li>
+                    <a className="user-nav-dropdown-item dropdown-item" href="#"><i className="fa-solid fa-arrow-right-from-bracket"></i> Keluar</a>
+                  </li>
                 </ul>
               </li>
             </ul>
-          </div> */}
-            <ul className="navbar-nav">
+            {/* <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
                   Masuk
@@ -86,7 +87,7 @@ export default function Navbar() {
                   Daftar Akun
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </span>
         </div>
       </div>
