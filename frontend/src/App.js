@@ -12,10 +12,12 @@ import React from "react";
 import Dashboard from "./pages/Admin/Dashboard/dashboard";
 import PengumumanBeasiswa from "./pages/User/PengumumanBeasiswa/PengumumanBeasiswa";
 import ProsedurBeasiswa from "./pages/User/ProsedurBeasiswa/ProsedurBeasiswa";
+import ScrollTop from "./utils/ScrollTop";
 
 export const App = () => {
   return (
     <BrowserRouter>
+      <ScrollTop />
       <Routes>
         <Route path="/" exact element={<LandingPage />}></Route>
         <Route path="/login" element={<Login />}></Route>
