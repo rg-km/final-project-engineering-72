@@ -7,13 +7,13 @@ export default function FormListBeasiswa({idBeasiswa, sumberBeasiswa, jenisBeasi
   return (
     <div className="col-md-6">
       <div className="daftar-item card">
-        <h5 class={`card-header 
+        <div class={`card-header 
         ${(jenisBeasiswa === "Beasiswa Atlet") ? "red" : 
           (jenisBeasiswa === "Beasiswa Penelitian") ? "green" :
           (jenisBeasiswa === "Beasiswa Prestasi") ? "orange" : ""}`}>
           <h3>{jenisBeasiswa}</h3>
           <h5>Nama Instansi </h5>
-        </h5>
+        </div>
         <div class="card-body">
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
