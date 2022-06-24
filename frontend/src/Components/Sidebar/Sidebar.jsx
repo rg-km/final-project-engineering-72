@@ -1,6 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [active, setActive] = useState(0);
@@ -38,9 +39,9 @@ function Sidebar() {
             data-bs-parent="#nav_accordion"
           >
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/Users" className="nav-link">
                 Lihat Users{" "}
-              </a>
+              </Link>
             </li>
           </ul>
         </li>
@@ -60,16 +61,16 @@ function Sidebar() {
             data-bs-parent="#nav_accordion"
           >
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/Beasiswa" className="nav-link">
                 {" "}
                 Data Master Beasiswa{" "}
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/Apply_beasiswa" className="nav-link">
                 {" "}
                 Data Pendaftaran Beasiswa{" "}
-              </a>
+              </Link>
             </li>
           </ul>
         </li>
