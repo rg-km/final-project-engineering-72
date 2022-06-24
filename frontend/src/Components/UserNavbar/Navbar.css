@@ -1,9 +1,8 @@
 .navbar-glass {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12.2px);
-  -webkit-backdrop-filter: blur(12.2px);
-  -webkit-transition: 0.6s ease-in;
-  transition: 0.6s ease-in;
+  background: rgba(255, 255, 255, 0.59);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
 }
 
 @media screen and (max-width: 768px) {
@@ -19,21 +18,17 @@
   }
 }
 .no-shadow {
-  -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
+  box-shadow: unset !important;
 }
 
 .user-navbar {
-  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   position: fixed !important;
 }
-
 .user-navbar img {
   height: 60px;
   width: auto;
 }
-
 .user-navbar .nav-right .nav-username {
   color: #242F9B;
 }
@@ -43,17 +38,13 @@
 .user-navbar .nav-right li {
   margin: 0 10px;
 }
-
 .user-navbar .nav-right .login {
   color: #242F9B;
 }
-
 .user-navbar .nav-right .login:hover {
   color: #757dd3;
-  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-
 .user-navbar .nav-right .register {
   color: #fff;
   background-color: #242F9B;
@@ -61,25 +52,19 @@
   padding-right: 30px !important;
   border-radius: 5px;
 }
-
 .user-navbar .nav-right .register:hover {
   color: #fff;
   background-color: #1d2780;
-  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-
 .user-navbar .nav-right .register:focus {
   border: none;
-  -webkit-box-shadow: 0 0 0 5px #24309b7c;
-          box-shadow: 0 0 0 5px #24309b7c;
-  -webkit-transition: 0.3s ease;
+  box-shadow: 0 0 0 5px #24309b7c;
   transition: 0.3s ease;
 }
-
 .user-navbar .nav-right .prim-btn:focus {
   background-color: #131a58;
-  -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
 }
+
 /*# sourceMappingURL=Navbar.css.map */
