@@ -1,10 +1,22 @@
 .navbar-glass {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12.2px);
-  -webkit-backdrop-filter: blur(12.2px);
-  transition: 0.6s ease-in;
+  background: rgba(255, 255, 255, 0.59);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
 }
 
+@media screen and (max-width: 768px) {
+  .no-shadow {
+    background: rgba(255, 255, 255, 0.59);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.1px);
+    -webkit-backdrop-filter: blur(12.1px);
+  }
+
+  .navbar-glass {
+    color: #000 !important;
+  }
+}
 .no-shadow {
   box-shadow: unset !important;
 }
@@ -16,6 +28,12 @@
 .user-navbar img {
   height: 60px;
   width: auto;
+}
+.user-navbar .nav-right .nav-username {
+  color: #242F9B;
+}
+.user-navbar .nav-right .user-nav-dropdown-item {
+  padding: 16px;
 }
 .user-navbar .nav-right li {
   margin: 0 10px;
