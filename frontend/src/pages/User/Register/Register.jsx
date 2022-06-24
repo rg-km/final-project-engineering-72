@@ -17,21 +17,13 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let response = await axios.post(
-        "http://localhost:8080/api/register",
-        {
-          email: email,
-          username: username,
-          password: password,
-        },
-        {
-          headers: {
-            Accept: "/",
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log(response);
+      const REGISTER_API = "/api/register";
+      const postRegister = await axios.post(REGISTER_API, {
+        email: email,
+        username: username,
+        password: password,
+      });
+      console.log(postRegister);
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +43,7 @@ export default function Register() {
                         <div className="daftar text-center ">Daftar</div>
                         <div className="mb-2">
                           <label
-                            for="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             className="form-label"
                           >
                             Email
@@ -63,11 +55,12 @@ export default function Register() {
                             name="email"
                             onChange={(e) => setEmail(e.target.value)}
                             aria-describedby="emailHelp"
+                            value={email}
                           />
                         </div>
                         <div className="mb-2">
                           <label
-                            for="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             className="form-label"
                           >
                             Nama Pengguna
@@ -79,11 +72,12 @@ export default function Register() {
                             name="username"
                             onChange={(e) => setUsername(e.target.value)}
                             aria-describedby="emailHelp"
+                            value={username}
                           />
                         </div>
                         <div className="mb-2">
                           <label
-                            for="exampleInputPassword1"
+                            htmlFor="exampleInputPassword1"
                             className="form-label"
                           >
                             Kata Sandi
@@ -94,6 +88,7 @@ export default function Register() {
                             id="password"
                             name="password"
                             onChange={(e) => setPassword(e.target.value)}
+                            value={password}
                           />
                         </div>
                       </form>
@@ -102,6 +97,7 @@ export default function Register() {
                         <button
                           type="submit"
                           className="btn btn-primary btn-daftar "
+                          onClick={handleSubmit}
                         >
                           Daftar
                         </button>
