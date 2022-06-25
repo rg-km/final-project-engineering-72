@@ -1,3 +1,4 @@
+import React from "react";
 import Login from "./pages/User/Login/Login";
 import Profil from "./pages/User/Profil/Profil";
 import Register from "./pages/User/Register/Register";
@@ -8,7 +9,8 @@ import LandingPage from "./pages/User/LandingPage/LandingPage";
 import Footer from "./Components/UserFooter/Footer";
 import DaftarBeasiswa from "./pages/User/DaftarBeasiswa/DaftarBeasiswa";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./pages/Admin/Dashboard/dashboard";
 import PengumumanBeasiswa from "./pages/User/PengumumanBeasiswa/PengumumanBeasiswa";
 import ProsedurBeasiswa from "./pages/User/ProsedurBeasiswa/ProsedurBeasiswa";
@@ -37,6 +39,7 @@ export const App = () => {
         <Route path="/Beasiswa" element={<Beasiswa />}></Route>
         <Route path="/Users" element={<Users />}></Route>
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 };
