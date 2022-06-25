@@ -4,6 +4,8 @@ import gambar from "..//..//..//assets//Login//subaku-logo.png";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
   useEffect(() => {
@@ -13,6 +15,14 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const diffToast = () => {
+    toast.success("Sukses Mendaftar", {
+      position: "top-center",
+      autoClose: 5000,
+      theme: "colored",
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +35,10 @@ export default function Register() {
       });
       console.log(postRegister);
     } catch (error) {
-      console.log(error);
+      toast.error("Gagal Mendaftar", {
+        position: "top-center",
+        autoClose: 5000,
+      });
     }
   };
 
@@ -97,7 +110,7 @@ export default function Register() {
                         <button
                           type="submit"
                           className="btn btn-primary btn-daftar "
-                          onClick={handleSubmit}
+                          onClick={diffToast}
                         >
                           Daftar
                         </button>
