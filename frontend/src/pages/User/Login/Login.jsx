@@ -4,18 +4,40 @@ import gambar from "../../../assets/Login/subaku-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
+  const toastPosition = {
+    position: "top-center",
+    autoClose: 5000,
+  }
+
+  const successToastLogin = () => {
+    toast.success("Sukses login!", {
+      position: "top-center",
+      autoClose: 5000,
+      theme: "colored",
+    });
+  };
+
+  const errorToastLogin = (msg, err) => {
+    toast.error(msg , toastPosition);
+    console.log(err)
+  }
+
   useEffect(() => {
     document.title = "Subaku";
   }, []);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // try {
     //   let response = await axios.get(
     //     "http://localhost:8080/api/register",
@@ -51,10 +73,52 @@ export default function Login() {
         console.log(error);
         alert("gagal");
       });
+
+    try {
+      if (username === "" && password === "") {
+        errorToastLogin("Username dan Password Anda masih kosong!");
+      }
+      else {
+        if (username === "") {
+          errorToastLogin("Username Anda masih kosong!")
+        }
+        else if (password === "") {
+          errorToastLogin("Password Anda masih kosong!")      
+        }
+        else {
+          let response = await axios.post(
+            "/api/login",
+            {
+              username: username,
+              password: password,
+            },
+            {
+              headers: {
+                Accept: "/",
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          successToastLogin();
+          console.log(response);
+          setIsLogin(true);
+        }
+      }
+    } 
+    catch (error) {
+      console.log(error);
+    }
+
   };
 
+  setInterval(() => {
+    if (isLogin === true) {
+      return window.location = "/"
+    }
+  }, 1500);
+
   return (
-    <div>
+    <div>    
       <section id="login">
         <div className="container">
           <div className="row">
@@ -67,7 +131,7 @@ export default function Login() {
                         <div className="Masuk text-center ">Masuk</div>
                         <div className="mb-4">
                           <label
-                            for="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             className="form-label"
                           >
                             Nama Pengguna
@@ -83,7 +147,7 @@ export default function Login() {
                         </div>
                         <div className="mb-4">
                           <label
-                            for="exampleInputPassword1"
+                            htmlFor="exampleInputPassword1"
                             className="form-label"
                           >
                             Kata Sandi
@@ -101,6 +165,7 @@ export default function Login() {
                           <button
                             type="submit"
                             className="btn btn-primary btn-masuk "
+                            onClick={handleSubmit}
                           >
                             Masuk
                           </button>
