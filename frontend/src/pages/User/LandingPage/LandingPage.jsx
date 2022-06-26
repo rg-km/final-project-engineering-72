@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import Navbar from "../../../Components/UserNavbar/Navbar";
 import Footer from "../../../Components/UserFooter/Footer";
 
@@ -8,6 +8,15 @@ export default function LandingPage() {
   useEffect(() => {
     document.title = "Home - Subaku";
   }, []);
+
+  if (!localStorage.getItem("isAuthenticated")) {
+    return <Navigate replace to="/login" />;
+  }
+
+  if (localStorage.getItem("role") !== "ADMIN") {
+    alert("USER");
+    <Navigate replace to="/login" />;
+  }
 
   return (
     <div>

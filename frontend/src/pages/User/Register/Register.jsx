@@ -3,7 +3,7 @@ import "./Register.css";
 import gambar from "..//..//..//assets//Login//subaku-logo.png";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,6 +11,8 @@ export default function Register() {
   useEffect(() => {
     document.title = "Subaku";
   }, []);
+
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -41,6 +43,22 @@ export default function Register() {
       });
     }
   };
+  //   axios
+  //     .post("http://localhost:5000/account", {
+  //       email: email,
+  //       username: username,
+  //       password: password,
+  //     })
+  //     .then((response) => {
+  //       alert(response);
+  //       console.log("DAftar Sukses");
+  //       navigate("/");
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //       alert("gagal");
+  //     });
+  // };
 
   return (
     <div>
@@ -79,7 +97,7 @@ export default function Register() {
                             Nama Pengguna
                           </label>
                           <input
-                            type="email"
+                            type="text"
                             className="form-control"
                             id="username"
                             name="username"
@@ -104,18 +122,19 @@ export default function Register() {
                             value={password}
                           />
                         </div>
+                        <center>
+                          {/* <Link to="/login"> */}
+                          <button
+                            type="submit"
+                            className="btn btn-primary btn-daftar "
+                            onClick={diffToast}
+                          >
+                            Daftar
+                          </button>
+                          {/* </Link> */}
+                        </center>
                       </form>
-                      <center>
-                        {/* <Link to="/login"> */}
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-daftar "
-                          onClick={diffToast}
-                        >
-                          Daftar
-                        </button>
-                        {/* </Link> */}
-                      </center>
+
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
                           Sudah punya akun?
