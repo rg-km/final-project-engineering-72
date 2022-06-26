@@ -2,8 +2,8 @@ package main
 
 import (
 	"database/sql"
-	"final-project-engineering-72/handler"
-	"final-project-engineering-72/user"
+	"final-project-engineering-72/backend/handler"
+	"final-project-engineering-72/backend/user"
 	"log"
 	"net/http"
 
@@ -16,6 +16,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
+	gin.SetMode(gin.DebugMode)
 
 	// repouser
 	repoUser := user.NewRepository(db)

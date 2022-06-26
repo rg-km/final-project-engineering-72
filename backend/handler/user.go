@@ -1,7 +1,8 @@
 package handler
 
 import (
-	"final-project-engineering-72/user"
+	"encoding/json"
+	"final-project-engineering-72/backend/user"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -54,18 +55,22 @@ func (h *handlerUser) LoginUser(c *gin.Context) {
 	var input user.InputLogin
 
 	// panggil function register
-	_, err := h.service.LoginUser(input)
+	user, err := h.service.LoginUser(input)
+	jsonres, _ := json.Marshal(user)
+	c.JSON(http.StatusOK, jsonres)
+
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": err.Error(),
 			"status":  "gagal",
 		})
 		return
+	} else {
+		// sukses
+		c.JSON(http.StatusOK, gin.H{
+			"message": "login",
+		})
 	}
-	// sukses
-	c.JSON(http.StatusOK, gin.H{
-		"message": "login berhasil",
-	})
 
 }
 

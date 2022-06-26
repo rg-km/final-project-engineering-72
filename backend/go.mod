@@ -1,4 +1,4 @@
-module final-project-engineering-72
+module final-project-engineering-72/backend
 
 go 1.17
 

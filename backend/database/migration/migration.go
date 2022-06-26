@@ -1,7 +1,7 @@
 package main
 
 import (
-	"final-project-engineering-72/database/connection"
+	"final-project-engineering-72/backend/database/connection"
 	"log"
 )
 
@@ -79,7 +79,6 @@ func migrate() {
 		FOREIGN KEY (id_beasiswa) REFERENCES beasiswa(id),
 		FOREIGN KEY (id_user) REFERENCES users(id),
 		);`
-
 
 	// execute query create table
 	_, err = db.Exec(createTableUser)
