@@ -10,8 +10,8 @@ export default function PengumumanBeasiswa() {
       <div className="container my-5 pb-5 pt-5">
         <h1 align="center">PENGUMUMAN HASIL SELEKSI BEASISWA </h1>
         <h5 align="center">Pilih Beasiswa</h5>
-        <select className="form-select" aria-label="Default select example">
-          <option selected>Pilih Jenis Beasiswa</option>
+        <select className="form-select" aria-label="Default select example" defaultValue={"default"}>
+          <option value={"default"}>Pilih Jenis Beasiswa</option>
           <option value="1">Beasiswa Prestasi</option>
           <option value="2">Beasiswa Atlet</option>
           <option value="3">Beasiswa Penelitian</option>
@@ -22,7 +22,7 @@ export default function PengumumanBeasiswa() {
           </button>
         </div>
         <div className="table-responsive">
-          <table class="table table-bordered ">
+          <table className="table table-bordered ">
             <thead>
               <tr>
                 <th scope="col">NO</th>
