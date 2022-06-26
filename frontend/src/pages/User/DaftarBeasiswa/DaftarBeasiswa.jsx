@@ -9,30 +9,39 @@ import { Link } from "react-router-dom";
 export default function DaftarBeasiswa() {
   const beasiswaList = [
     {
+      id: 1,
       jenisBeasiswa: "Beasiswa Prestasi",
     },
     {
+      id: 2,
       jenisBeasiswa: "Beasiswa Atlet",
     },
     {
+      id: 3,
       jenisBeasiswa: "Beasiswa Penelitian",
     },
     {
+      id: 4,
       jenisBeasiswa: "Beasiswa Prestasi",
     },
     {
+      id: 5,
       jenisBeasiswa: "Beasiswa Atlet",
     },
     {
+      id: 6,
       jenisBeasiswa: "Beasiswa Penelitian",
     },
     {
+      id: 7,
       jenisBeasiswa: "Beasiswa Prestasi",
     },
     {
+      id: 8,
       jenisBeasiswa: "Beasiswa Atlet",
     },
     {
+      id: 9,
       jenisBeasiswa: "Beasiswa Penelitian",
     },
   ];
@@ -45,7 +54,10 @@ export default function DaftarBeasiswa() {
         </section>
         <section className="daftar-bea-list row mb-5">
           {beasiswaList.map((item) => {
-            return <FormListBeasiswa jenisBeasiswa={item.jenisBeasiswa} />;
+            return <FormListBeasiswa 
+            key={item.id} 
+            jenisBeasiswa={item.jenisBeasiswa} 
+            />;
           })}
         </section>
       </div>
