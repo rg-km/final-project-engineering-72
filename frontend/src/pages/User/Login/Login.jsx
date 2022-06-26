@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 import gambar from "../../../assets/Login/subaku-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -33,8 +33,47 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+
+    // try {
+    //   let response = await axios.get(
+    //     "http://localhost:8080/api/register",
+    //     {
+    //       Username: username,
+    //       password: password,
+    //     },
+    //     {
+    //       headers: {
+    //         Accept: "/",
+    //         "Content-Type": "application/json",
+    //       },
+    //     }
+    //   );
+    //   console.log(response);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+
+    axios
+      .post("http://localhost:5000/account", {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        alert(response);
+        localStorage.setItem("isAuthenticated", true);
+        localStorage.setItem("role", "USER");
+        console.log(response);
+        navigate("/");
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("gagal");
+      });
+
     try {
       if (username === "" && password === "") {
         errorToastLogin("Username dan Password Anda masih kosong!");
@@ -69,6 +108,7 @@ export default function Login() {
     catch (error) {
       console.log(error);
     }
+
   };
 
   setInterval(() => {
@@ -97,7 +137,7 @@ export default function Login() {
                             Nama Pengguna
                           </label>
                           <input
-                            type="email"
+                            type="text"
                             className="form-control"
                             id="username"
                             name="username"
@@ -120,9 +160,8 @@ export default function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                           />
                         </div>
-                      </form>
-                      <center>
-                        <Link to="/">
+                        <center>
+                          {/* <Link to="/"> */}
                           <button
                             type="submit"
                             className="btn btn-primary btn-masuk "
@@ -130,8 +169,10 @@ export default function Login() {
                           >
                             Masuk
                           </button>
-                        </Link>
-                      </center>
+                          {/* </Link> */}
+                        </center>
+                      </form>
+
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
                           Belum punya akun?
