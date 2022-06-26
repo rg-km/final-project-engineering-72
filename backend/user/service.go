@@ -6,7 +6,7 @@ import (
 
 // bikin kontrak function (interface)
 type Service interface {
-	RegisterUser(input InputRegister) (InputRegister, error)
+	RegisterUser(input InputRegister) (User, error)
 	LoginUser(input InputLogin) (User, error)
 	ProfilUser(input InputProfil) (User, error)
 }
@@ -22,27 +22,26 @@ func NewService(repository Repository) *service {
 }
 
 // func register
-func (s *service) RegisterUser(input InputRegister) (InputRegister, error) {
+func (s *service) RegisterUser(input InputRegister) (User, error) {
 	// tangkap email
 	email := input.Email
-	username := input.Username
-	password := input.Password
 
 	// cek apakah email ada apa ngga di db
 	user, _ := s.repository.FindUserByEmail(email)
 
 	// jika ada
-	if user.Email == email {
-		return input, errors.New("email sudah terdaftar")
+	if user.Id != 0 {
+		return user, errors.New("email telah terdaftar")
 	}
 
 	// jika tidak ada maka binding
-	input.Email = email
-	input.Username = username
-	input.Password = password
+	var myUser User
+	myUser.Email = input.Email
+	myUser.UserName = input.Username
+	myUser.Password = input.Password
 
 	// simpan data ke database
-	newUser, err := s.repository.RegisterUser(input)
+	newUser, err := s.repository.Save(myUser)
 	if err != nil {
 		return newUser, err
 	}
@@ -53,18 +52,16 @@ func (s *service) RegisterUser(input InputRegister) (InputRegister, error) {
 // func login
 func (s *service) LoginUser(input InputLogin) (User, error) {
 	// tangkap data login setelah register
-	username := input.Username
 	password := input.Password
 
 	// cek apakah username daan password ada apa ngga di db
-	user, _ := s.repository.FindUserByUsername(username)
+	user, _ := s.repository.FindUserByPassword(password)
 
 	//jika password seuai
-	if user.UserName == username && user.Password == password {
-		return user, nil
+	if user.Id != 0 {
+		return user, errors.New("password sudah valid")
 	}
-	// jika tidak
-	return user, errors.New("username atau password salah")
+	return user, nil
 }
 
 // func data_profil

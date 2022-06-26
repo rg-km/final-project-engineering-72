@@ -10,7 +10,6 @@ type Repository interface {
 	FindUserByEmail(email string) (User, error)
 	FindUserByUsername(username string) (User, error)
 	FindUserByPassword(password string) (User, error)
-	RegisterUser(input InputRegister) (InputRegister, error)
 }
 
 // repo ini butuh koneksi database untuk query
@@ -57,19 +56,6 @@ func (r *respository) Save(user User) (User, error) {
 	}
 
 	return user, nil
-}
-
-func (r *respository) RegisterUser(input InputRegister) (InputRegister, error) {
-
-	sql := `INSERT INTO users (username, email, password)
-			VALUES (?, ?, ?);`
-
-	_, err := r.db.Exec(sql, input.Username, input.Email, input.Password)
-	if err != nil {
-		return input, err
-	}
-
-	return input, nil
 }
 
 // func untuk mencari user by email
