@@ -2,7 +2,6 @@ package user
 
 import (
 	"errors"
-	"fmt"
 )
 
 // bikin kontrak function (interface)
@@ -53,19 +52,17 @@ func (s *service) RegisterUser(input InputRegister) (User, error) {
 // func login
 func (s *service) LoginUser(input InputLogin) (User, error) {
 	// tangkap data login setelah register
-	username := input.Username
 	password := input.Password
 
 	// cek apakah username daan password ada apa ngga di db
-	user, _ := s.repository.FindUserByUsername(username)
-	fmt.Println(user.UserName, user.Password)
+	user, _ := s.repository.FindUserByPassword(password)
 
 	//jika password seuai
-	if user.UserName == username && user.Password == password {
-		return user, nil
+
+	if user.Id != 0 {
+		return user, errors.New("password sudah valid")
 	}
-	// jika tidak
-	return user, errors.New("username atau password salah")
+	return user, nil
 }
 
 // func data_profil
