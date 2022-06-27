@@ -35,7 +35,7 @@ export default function Users() {
               </li>
             </ol>
           </nav>
-          <div className="main-content">
+          <div className="main-content-users">
             <nav className="navbar">
               <div className="container-fluid">
                 <p>
