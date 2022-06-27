@@ -1,4 +1,4 @@
-body {
+.admin {
     background: #242F9B;
   }
   img{
@@ -34,7 +34,8 @@ body {
     background-color: #242F9B;
     color: #fff;
 }
-.footer{
+.footer-admin{
     font-weight: bold;
     color: #fff;
+    background-color:#fff;
 }
