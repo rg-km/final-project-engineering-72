@@ -156,27 +156,13 @@ export default function Register() {
                           <button
                             type="submit"
                             className="btn btn-primary btn-daftar "
-                            onClick={diffToast}
+                            onClick={handleSubmit}
                           >
                             Daftar
                           </button>
                           {/* </Link> */}
                         </center>
                       </form>
-
-
-
-                      <center>
-                        {/* <Link to="/login"> */}
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-daftar "
-                          onClick={handleSubmit}
-                        >
-                          Daftar
-                        </button>
-                        {/* </Link> */}
-                      </center>
 
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
