@@ -9,14 +9,14 @@ export default function LandingPage() {
     document.title = "Home - Subaku";
   }, []);
 
-  if (!localStorage.getItem("isAuthenticated")) {
-    return <Navigate replace to="/login" />;
-  }
+  // if (!localStorage.getItem("isAuthenticated")) {
+  //   return <Navigate replace to="/login" />;
+  // }
 
-  if (localStorage.getItem("role") !== "ADMIN") {
-    alert("USER");
-    <Navigate replace to="/login" />;
-  }
+  // if (localStorage.getItem("role") !== "ADMIN") {
+  //   alert("USER");
+  //   <Navigate replace to="/login" />;
+  // }
 
   return (
     <div>

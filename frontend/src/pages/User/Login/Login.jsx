@@ -11,7 +11,7 @@ export default function Login() {
   const toastPosition = {
     position: "top-center",
     autoClose: 5000,
-  }
+  };
 
   const successToastLogin = () => {
     toast.success("Sukses login!", {
@@ -22,9 +22,9 @@ export default function Login() {
   };
 
   const errorToastLogin = (msg, err) => {
-    toast.error(msg , toastPosition);
-    console.log(err)
-  }
+    toast.error(msg, toastPosition);
+    console.log(err);
+  };
 
   useEffect(() => {
     document.title = "Subaku";
@@ -35,7 +35,7 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // try {
@@ -57,35 +57,32 @@ export default function Login() {
     //   console.log(error);
     // }
 
-    axios
-      .post("http://localhost:5000/account", {
-        username: username,
-        password: password,
-      })
-      .then((response) => {
-        alert(response);
-        localStorage.setItem("isAuthenticated", true);
-        localStorage.setItem("role", "USER");
-        console.log(response);
-        navigate("/");
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert("gagal");
-      });
+    // axios
+    //   .post("http://localhost:5000/account", {
+    //     username: username,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     alert(response);
+    //     localStorage.setItem("isAuthenticated", true);
+    //     localStorage.setItem("role", "USER");
+    //     console.log(response);
+    //     navigate("/");
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //     alert("gagal");
+    //   });
 
     try {
       if (username === "" && password === "") {
         errorToastLogin("Username dan Password Anda masih kosong!");
-      }
-      else {
+      } else {
         if (username === "") {
-          errorToastLogin("Username Anda masih kosong!")
-        }
-        else if (password === "") {
-          errorToastLogin("Password Anda masih kosong!")      
-        }
-        else {
+          errorToastLogin("Username Anda masih kosong!");
+        } else if (password === "") {
+          errorToastLogin("Password Anda masih kosong!");
+        } else {
           let response = await axios.post(
             "/api/login",
             {
@@ -104,21 +101,19 @@ export default function Login() {
           setIsLogin(true);
         }
       }
-    } 
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
-
   };
 
   setInterval(() => {
     if (isLogin === true) {
-      return window.location = "/"
+      return (window.location = "/");
     }
   }, 1500);
 
   return (
-    <div>    
+    <div>
       <section id="login">
         <div className="container">
           <div className="row">
