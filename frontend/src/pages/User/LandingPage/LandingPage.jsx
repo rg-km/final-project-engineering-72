@@ -3,8 +3,11 @@ import "./LandingPage.css";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import Navbar from "../../../Components/UserNavbar/Navbar";
 import Footer from "../../../Components/UserFooter/Footer";
+import useStore from "../../../store/loginStore";
 
 export default function LandingPage() {
+  const {usernameLogin, isLogin} = useStore()
+
   useEffect(() => {
     document.title = "Home - Subaku";
   }, []);
@@ -18,25 +21,54 @@ export default function LandingPage() {
   //   <Navigate replace to="/login" />;
   // }
 
+
+
+  const JumbotronDesc = () => {
+    if (isLogin === true) {
+      return (
+        <>
+          <h1>Halo, {usernameLogin}! Selamat datang kembali di Subaku </h1>
+          <p>
+            Semoga hari Kamu menyenangkan, ya! Jangan lupa scroll di halaman Daftar Beasiswa untuk menemukan beasiswa impianmu.
+          </p>
+        </>
+      )
+    }
+    return (
+      <>
+        <h1>Yuk, Daftar &amp; Wujudkan Mimpimu! </h1>
+        <p>
+          Daftarkan dirimu, dan siapkan langkah pertamamu untuk meraih
+          beasiswa impian bersama Subaku.
+        </p>
+      </>
+    )
+  }
+
+
   return (
     <div>
       <Navbar />
       <div className="landing-wrapper">
         <section className="landing-jumbotron">
           <div className="container jumbotron-container">
-            <div className="jumbotron-text">
-              <h1>Yuk, Daftar &amp; Wujudkan Mimpimu! </h1>
-              <p>
-                Daftarkan dirimu, dan siapkan langkah pertamamu untuk meraih
-                beasiswa impian bersama Subaku.
-              </p>
+            <div className="jumbotron-text">              
+              <JumbotronDesc/>
               <div className="jumbotron-buttons">
-                <Link to="/register" className="register-btn my-btn prim-btn">
-                  Daftar Sekarang
-                </Link>
-                <Link to="/login" className="login-btn my-btn sec-btn">
-                  Masuk
-                </Link>
+                {isLogin ? 
+                  <Link to="/DaftarBeasiswa" className="register-btn my-btn prim-btn">
+                    Daftar Beasiswa
+                  </Link>                  
+                  :
+                  <>
+                    <Link to="/register" className="register-btn my-btn prim-btn">
+                      Daftar Sekarang
+                    </Link>
+                    <Link to="/login" className="login-btn my-btn sec-btn">
+                      Masuk
+                    </Link>
+                  </>
+                }
               </div>
             </div>
             <div className="jumbotron-pic">
@@ -119,16 +151,25 @@ export default function LandingPage() {
         <section className="landing-extras">
           <div className="container extras-container">
             <div className="extras-desc">
-              <h1>Sudah siap untuk gabung?</h1>
-              <p>Daftar akun atau cari beasiswa sekarang!</p>
+              <h1>Sudah siap untuk {isLogin ? "daftar beasiswa" : "gabung"}?</h1>
+              <p>{isLogin ? "Ayo cari beasiswanya sekarang!" : "Daftar akun atau cari beasiswa sekarang!"}</p>
             </div>
-            <div className="extras-buttons">
-              <a href="/register" className="register-btn my-btn prim-btn">
-                Daftar Akun
-              </a>
-              <Link to="/DaftarBeasiswa" className="cari-btn my-btn sec-btn">
-                Cari Beasiswa
-              </Link>
+            <div className="extras-buttons" style={{flexDirection: "row-reverse"}}>
+              {
+                isLogin ? 
+                <Link to="/DaftarBeasiswa" className="cari-btn my-btn prim-btn">
+                  Cari Beasiswa
+                </Link> 
+                :
+                <>
+                <Link to="/register" className="register-btn my-btn prim-btn">
+                  Daftar Akun
+                </Link>
+                <Link to="/DaftarBeasiswa" className="cari-btn my-btn sec-btn">
+                  Cari Beasiswa
+                </Link>            
+                </>
+              }
             </div>
           </div>
         </section>

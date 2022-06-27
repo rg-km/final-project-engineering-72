@@ -2,8 +2,12 @@ import React from "react";
 import "./Pengumumanbeasiswa.css";
 import Navbar from "../../../Components/UserNavbar/Navbar";
 import Footer from "../../../Components/UserFooter/Footer";
+import { useEffect } from "react";
 
 export default function PengumumanBeasiswa() {
+  useEffect(() => {
+    document.title = "Pengumuman Beasiswa - Subaku";
+  }, []);
   return (
     <>
       <Navbar />
