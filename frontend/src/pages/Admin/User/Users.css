@@ -32,16 +32,11 @@
     z-index: 999;
   }
 }
-
-img {
-  width: 350px;
-  height: 290px;
-}
 /* main content */
-.main-content {
+.main-content-users {
   padding: 0;
   margin: 0;
-  height: 85vh;
+  height: 85.5vh;
   display: flex;
   flex-direction: column;
 }

@@ -20,7 +20,7 @@ export default function Users() {
                             <li class="breadcrumb-item active" aria-current="page">Lihat Users</li>
                         </ol>
                     </nav>
-                    <div className="main-content">
+                    <div className="main-content-users">
                         <nav className="navbar">
                             <div className="container-fluid">
                                 <p>
