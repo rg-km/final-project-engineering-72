@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../../Components/Sidebar/Sidebar";
 import "./Beasiswa.css";
+import axios from "axios"
 
 export default function Beasiswa() {
   useEffect(() => {
@@ -15,30 +16,76 @@ export default function Beasiswa() {
         </nav>
         <main className="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <a href="#">Home</a>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 Data Master Beasiswa
               </li>
             </ol>
           </nav>
-          <div className="main-content">
+          <div className="main-content-beasiswa">
             <nav className="navbar">
               <div className="container-fluid">
                 <p>
                   <i className="fa fa-table" aria-hidden="true"></i>
                   <span className="navbar-brand">Tabel Beasiswa</span>
                 </p>
-                <button className="btn btn-outline-primary" type="button">
+                <button className="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#tambahDataBeasiswa">
                   Tambah Data
                 </button>
               </div>
             </nav>
+              <div className="modal fade" id="tambahDataBeasiswa" tabindex="-1" aria-labelledby="konfirmTambahModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="konfirmTambahModalLabel">Tambah Data Beasiswa</h5>
+                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                      <form>
+                        <div className="form-row">
+                          <div className="form-group col-md-6">
+                            <label for="inputnamabeasiswa">Jenis Beasiswa</label>
+                            <input type="text" className="form-control" id="inputnamabeasiswa" placeholder="Jenis Beasiswa"/>
+                          </div>
+                          <div className="form-group col-md-6">
+                            <label for="inputsumberbeasiswa">Sumber Beasiswa</label>
+                            <input type="text" className="form-control" id="inputsumberbeasiswa" placeholder="Sumber Beasiswa"/>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label for="inputtanggal">Tanggal Penyaluran</label>
+                          <input type="date" className="form-control" id="inputtanggalpenyaluran" placeholder="Tanggal Penyaluran"/>
+                        </div>
+                        <div className="form-row">
+                          <div className="form-group col-md-6">
+                            <label for="inputnominal">Nominal</label>
+                            <input type="text" className="form-control" id="inputnominal" placeholder="Nominal"/>
+                          </div>
+                          <div className="form-group col-md-6">
+                            <label for="inputketerangan">Keterangan</label>
+                            <select id="inputketerangan" className="form-control">
+                              <option selected>Choose...</option>
+                              <option>Diproses</option>
+                              <option>Selesai</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="my-btn sec-btn" data-bs-dismiss="modal">Batal</button>
+                      <button type="button" className="my-btn prim-btn">Tambah</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <div className="user-setting">
-              <nav class="navbar">
-                <div class="container-fluid">
+              <nav className="navbar">
+                <div className="container-fluid">
                   <p className="view-data-table mt-3">
                     <span>Lihat</span>
                     <div className="btn-group">
@@ -107,10 +154,10 @@ export default function Beasiswa() {
                     <td>Proses</td>
                     <td>
                       <button type="button" className="btn">
-                        <i class="fa fa-edit" aria-hidden="true"></i>
+                        <i className="fa fa-edit" aria-hidden="true"></i>
                       </button>
                       <button type="button" className="btn">
-                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </td>
                   </tr>
@@ -125,27 +172,27 @@ export default function Beasiswa() {
                 <span>10 </span>
                 <span>from 100 entries</span>
               </p>
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" aria-label="Previous">
+              <ul className="pagination">
+                <li className="page-item disabled">
+                  <a className="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
+                    <span className="sr-only">Previous</span>
                   </a>
                 </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">
+                <li className="page-item active">
+                  <a className="page-link" href="#">
                     1
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
+                <li className="page-item">
+                  <a className="page-link" href="#">
                     2
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
+                <li className="page-item">
+                  <a className="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
+                    <span className="sr-only">Next</span>
                   </a>
                 </li>
               </ul>

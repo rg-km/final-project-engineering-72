@@ -18,10 +18,10 @@ function Sidebar() {
             <span>Subaku</span>
           </h6>
         </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="#">
-            <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard
-          </a>
+        <li className="nav-item {active}">
+          <Link to="/Dashboard" className="nav-link">
+          <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard{" "}
+              </Link>
         </li>
         <li className="nav-item">
           <a
