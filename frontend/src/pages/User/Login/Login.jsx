@@ -9,11 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 import useStore from "../../../store/loginStore";
 
 export default function Login() {
-  const {usernameLogin, isLogin, setUsernameLogin, setIsLogin} = useStore();
+  const { usernameLogin, isLogin, setUsernameLogin, setIsLogin } = useStore();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
-  
+
   const toastPosition = {
     position: "top-center",
     autoClose: 5000,
@@ -97,59 +96,22 @@ export default function Login() {
       setUsernameLogin(username);
       setIsLogin(true);
       setInterval(() => {
-          return window.location = "/"  
+        return (window.location = "/");
       }, 1500);
-    } 
-    catch (error) {
+    } catch (error) {
       if (username === "" && password === "") {
         errorToastLogin("Username dan Password Anda masih kosong!");
       } else {
         if (username === "") {
-
           errorToastLogin("Username Anda masih kosong!");
         } else if (password === "") {
           errorToastLogin("Password Anda masih kosong!");
-        } else {
-          let response = await axios.post(
-            "/api/login",
-            {
-              username: username,
-              password: password,
-            },
-            {
-              headers: {
-                Accept: "/",
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          successToastLogin();
-          console.log(response);
-          setIsLogin(true);
-        }
-      }
-    } catch (error) {
-
-          errorToastLogin("Username Anda masih kosong!")
-        }
-        else if (password === "") {
-          errorToastLogin("Password Anda masih kosong!")      
         }
       }
       errorToastLogin("Username atau Password Anda salah!");
-
       console.log(error);
     }
   };
-
-
-  setInterval(() => {
-    if (isLogin === true) {
-      return (window.location = "/");
-    }
-  }, 1500);
-
-
 
   return (
     <div>
@@ -196,13 +158,13 @@ export default function Login() {
                         </div>
                         <center>
                           <Link to="/profile">
-                          <button
-                            type="submit"
-                            className="btn btn-primary btn-masuk "
-                            onClick={handleSubmit}
-                          >
-                            Masuk
-                          </button>
+                            <button
+                              type="submit"
+                              className="btn btn-primary btn-masuk "
+                              onClick={handleSubmit}
+                            >
+                              Masuk
+                            </button>
                           </Link>
                         </center>
                       </form>
