@@ -113,6 +113,9 @@ export default function () {
         console.log(error);
         alert("gagal");
       });
+    setInterval(() => {
+      return (window.location = "/");
+    }, 4000);
   };
 
   return (
@@ -352,7 +355,11 @@ export default function () {
                 </div>
               </div>
               <div className="col-md-11 mx-auto">
-                <button type="submit" className="btn btn-primary btn-submit">
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-submit"
+                  onClick={submitHandler}
+                >
                   Submit
                 </button>
               </div>
