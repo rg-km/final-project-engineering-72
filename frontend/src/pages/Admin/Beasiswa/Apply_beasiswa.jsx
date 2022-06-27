@@ -3,9 +3,59 @@ import Sidebar from "../../../Components/Sidebar/Sidebar";
 import "./Beasiswa.css";
 
 export default function Apply_beasiswa() {
+    const [jenis_beasiswa,setBeasiswa] = useState('')
+  const [nisn,setSumber] = useState('')
+  const [pendaftar,setPendaftar] = useState('')
+  const [nominal,setNominal] = useState('')
+  const [keterangan,setKeterangan] = useState('')
+  // temporary dummy data
+  const dataDummy = [
+    {
+      id : "1",
+      jenis_beasiswa : "Beasiswa Penelitian",
+      nisn : "123456789",
+      pendaftar : "Ana Faradisa",
+      nominal : "3000000",
+      keterangan : "diproses",
+    },
+    {
+      id : "2",
+      jenis_beasiswa : "Beasiswa Prestasi",
+      nisn : "32654987",
+      pendaftar : "Mahfud Emejing",
+      nominal : "2500000",
+      keterangan : "diproses",
+    },
+    {
+      id : "3",
+      jenis_beasiswa : "Beasiswa Atlit",
+      nisn : "20152369874",
+      pendaftar : "Weka Sauna",
+      nominal : "2000000",
+      keterangan : "diproses",
+    },
+  ];
+  // 
+  const [data, setData] = useState(dataDummy);
+  const handleAdd = () => {
+    let addedData = {id:data.length+1, jenis_beasiswa, nisn, pendaftar, nominal, keterangan}
+    setData([...data, addedData])
+    setBeasiswa('');
+    setSumber('');
+    setPendaftar('');
+    setNominal('');
+    setKeterangan('');
+  }
+  const [modalDel, setModalDel] = useState(false);
+  const [idDel, setIdDel] = useState(null);
+  const handleDel = () => {
+    let dataTmp = data.filter((value) => value.id !== idDel)
+    setData(dataTmp)
+    setModalDel(false)
+    }
     useEffect(() => {
         document.title = "Dashboard - Subaku";
-      }, []);
+      }, [data]);
 
       return (
         <div className="container-fluid">
@@ -29,6 +79,23 @@ export default function Apply_beasiswa() {
                                 </p>
                             </div>
                         </nav>
+                        <div className="modal fade" id="konfirmDeleteModal" tabIndex="-1" aria-labelledby="konfirmDeleteModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="konfirmDeleteModalLabel">Konfirmasi Aksi</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div className="modal-body">
+                    Apakah anda yakin untuk menghapus data beasiswa ini?
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="my-btn sec-btn" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" className="my-btn prim-btn" onClick={() => handleDel()}>Hapus</button>
+                  </div>
+                </div>
+              </div>
+            </div>
                         <div className="user-setting">
                             <nav class="navbar">
                                 <div class="container-fluid">
@@ -67,18 +134,28 @@ export default function Apply_beasiswa() {
                                     </tr>
                                 </thead>
                                 <tbody className="table-body">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Beasiswa Pintar</td>
-                                        <td>1234567890</td>
-                                        <td>Anne Rose</td>
-                                        <td>1200000</td>
-                                        <td>Lolos</td>
-                                        <td>
-                                            <button  type="button" className="btn"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                            <button type="button" className="btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </td>
+                                {data.map((value) => (
+                                    <tr key={value.id}>
+                                    <td>{value.id}</td>
+                                    <td>{value.jenis_beasiswa}</td>
+                                    <td>{value.nisn}</td>
+                                    <td>{value.pendaftar}</td>
+                                    <td>{value.nominal}</td>
+                                    <td>{value.keterangan}</td>
+                                    <td>
+                                        <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#editDataBeasiswa">
+                                        <i className="fa fa-edit" aria-hidden="true" ></i>
+                                        </button>
+                                        <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#konfirmDeleteModal" 
+                                        onClick={() => {
+                                        setModalDel(true)
+                                        setIdDel(value.id)
+                                        }}>
+                                        <i className="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
                                     </tr>
+                                ))}
                                 </tbody>
                             </table>
                         </div>
@@ -117,3 +194,4 @@ export default function Apply_beasiswa() {
         </div>
     );
 }
+
