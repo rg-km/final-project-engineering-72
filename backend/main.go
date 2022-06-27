@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	//"final-project-engineering-72/beasiswa"
 	"final-project-engineering-72/handler"
 	jwttoken "final-project-engineering-72/jwt-token"
 	"final-project-engineering-72/support"
@@ -24,12 +25,17 @@ func main() {
 	// service
 	serviceTokenJWT := jwttoken.NewServiceJWT()
 
-	// repouser
+	// repo
 	repoUser := user.NewRepository(db)
-	// serviceuser
+	//repoBeasiswa := beasiswa.NewRepository(db)
+
+	// service
 	serviceUser := user.NewService(repoUser)
-	// handler user
+	//serviceBeasiswa := beasiswa.NewService(repoBeasiswa)
+
+	// handler
 	handlerUser := handler.NewHandler(serviceUser, serviceTokenJWT)
+	//handlerBeasiswa := handler.Handler(serviceBeasiswa, serviceTokenJWT)
 
 	// bikin server
 	server := gin.Default()
@@ -38,6 +44,7 @@ func main() {
 	server.POST("/api/register", handlerUser.RegisterUser)
 	server.POST("/api/login", handlerUser.LoginUser)
 	server.POST("/api/profile", handlerUser.ProfilUser)
+	//server.POST("/api/beasiswa", handlerBeasiswa.InputData)
 	server.GET("/api/admin/dashboard", Authorization(serviceTokenJWT, serviceUser), handlerUser.DashboardAdmin)
 
 	// run server

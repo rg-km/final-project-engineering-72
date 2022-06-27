@@ -6,8 +6,8 @@ import (
 
 // bikin kontrak function (interface)
 type Service interface {
-	DataBeasiswa(input InputData) error
-	InputData(input InputData) error
+	DataBeasiswa(input InputData) (Beasiswa, error)
+	InputData(input InputData) (Beasiswa, error)
 }
 
 // bikin struct dengan atribut bertipe Repository
@@ -21,7 +21,7 @@ func NewService(repository Repository) *service {
 }
 
 // func input
-func (s *service) InputData(input InputData) error {
+func (s *service) InputData(input InputData) (Beasiswa error) {
 	// tangkap data beasiswa
 	jenis_beasiswa := input.Jenis_Beasiswa
 	keterangan := input.Keterangan
@@ -48,9 +48,9 @@ func (s *service) DataBeasiswa(input InputData) error {
 
 	//binding
 	var myBeasiswa Beasiswa
-	myBeasiswa.Jenis_Beasiswa = input.Jenis_Beasiswa
-	myBeasiswa.Sumber_Beasiswa = input.Sumber_Beasiswa
-	myBeasiswa.Tanggal_Penyaluran = input.Tanggal_Penyaluran
+	myBeasiswa.JenisBeasiswa = input.Jenis_Beasiswa
+	myBeasiswa.SumberBeasiswa = input.Sumber_Beasiswa
+	myBeasiswa.TanggalPenyaluran = input.Tanggal_Penyaluran
 	myBeasiswa.Keterangan = input.Keterangan
 
 	// simpan data ke database

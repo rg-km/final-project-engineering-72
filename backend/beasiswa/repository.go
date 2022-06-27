@@ -2,6 +2,7 @@ package beasiswa
 
 import (
 	"database/sql"
+	"fmt"
 )
 
 // bikin kontrak function (interface)
@@ -15,6 +16,14 @@ type Repository interface {
 // bikin struct dengan atribut bertipe *sql.DB
 type respository struct {
 	db *sql.DB
+}
+
+type UpdateBeasiswa struct {
+	db *sql.DB
+}
+
+func UpdateaBeasiswa(db *sql.DB) *UpdateBeasiswa {
+	return &UpdateBeasiswa{db: db}
 }
 
 // bikin func newrepo buat di panggil di main
@@ -33,7 +42,7 @@ func (r *respository) Save(beasiswa Beasiswa) error {
 	;`
 
 	// execute query create table
-	_, err := r.db.Exec(sql, beasiswa.Jenis_Beasiswa, beasiswa.Sumber_Beasiswa, beasiswa.Tanggal_Penyaluran, beasiswa.Keterangan)
+	_, err := r.db.Exec(sql, beasiswa.JenisBeasiswa, beasiswa.SumberBeasiswa, beasiswa.TanggalPenyaluran, beasiswa.Keterangan)
 	if err != nil {
 		return err
 	}
@@ -58,9 +67,9 @@ func (r *respository) FindBeasiswaByJenisBeasiswa(jenis_beasiswa string) (Beasis
 	// binding
 	err := data.Scan(
 		&beasiswa.Id,
-		&beasiswa.Jenis_Beasiswa,
-		&beasiswa.Sumber_Beasiswa,
-		&beasiswa.Tanggal_Penyaluran,
+		&beasiswa.JenisBeasiswa,
+		&beasiswa.SumberBeasiswa,
+		&beasiswa.TanggalPenyaluran,
 		&beasiswa.Keterangan,
 	)
 
@@ -88,9 +97,9 @@ func (r *respository) FindBeasiswaByKeterangan(keterangan string) (Beasiswa, err
 	// binding
 	err := data.Scan(
 		&beasiswa.Id,
-		&beasiswa.Jenis_Beasiswa,
-		&beasiswa.Sumber_Beasiswa,
-		&beasiswa.Tanggal_Penyaluran,
+		&beasiswa.JenisBeasiswa,
+		&beasiswa.SumberBeasiswa,
+		&beasiswa.TanggalPenyaluran,
 		&beasiswa.Keterangan,
 	)
 
@@ -99,4 +108,26 @@ func (r *respository) FindBeasiswaByKeterangan(keterangan string) (Beasiswa, err
 	}
 
 	return beasiswa, nil
+}
+
+func (r *UpdateBeasiswa) UpdateBeasiswaListJenisBeasiswa(JenisBeasiswa string) ([]Beasiswa, error) {
+	rows, err := r.db.Query("UPDATE beasiswa set jenis_beasiswa =? WHERE jenis_beasiswa =?")
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var jenis []Beasiswa
+
+	for rows.Next() {
+		var jenisBeasiswa Beasiswa
+		err := rows.Scan(&jenisBeasiswa.Id, &jenisBeasiswa.JenisBeasiswa, &jenisBeasiswa.SumberBeasiswa, &jenisBeasiswa.TanggalPenyaluran, &jenisBeasiswa.Keterangan)
+		if err != nil {
+			fmt.Println(err)
+			return nil, err
+		}
+		jenis = append(jenis, jenisBeasiswa)
+	}
+
+	return jenis, nil
 }
