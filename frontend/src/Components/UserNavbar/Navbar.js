@@ -2,9 +2,21 @@ import { useEffect, useState } from "react";
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import useStore from "../../store/loginStore";
+import { ToastContainer, toast } from "react-toastify";
+
 
 export default function Navbar() {
   const [scrollPos, setScrollPos] = useState("no-shadow");
+  const {usernameLogin, isLogin, setLogout} = useStore()
+
+  const successToastLogout = () => {
+    toast.success("Sukses keluar dari akun!", {
+      position: "top-center",
+      autoClose: 3000,
+      theme: "colored",
+    });
+  };
 
   const scrollHandler = () => {
     if (window.scrollY > 2) {
@@ -18,17 +30,26 @@ export default function Navbar() {
     window.addEventListener("scroll", () => scrollHandler());
   }, []);
 
+  const handleLogout = () => {
+    setLogout();  
+    successToastLogout();
+    setInterval(() => {
+      return window.location = "/"
+    }, 1500);
+  }
+
+
   return (
     <nav
       className={`user-navbar navbar navbar-expand-lg fixed-top ${scrollPos}`}
     >
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link to="/" className="navbar-brand">
           <img
             src={require("../../assets/logo-subaku.png")}
             alt="logo subaku"
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -59,35 +80,48 @@ export default function Navbar() {
             </li>
           </ul>
           <span className="nav-right navbar-text">
-            <ul className="navbar-nav">
-              <li className="nav-item dropdown">
-                <a className="nav-username nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Nama User
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                  <li>
-                    <Link to="/profil" className="user-nav-dropdown-item dropdown-item">
-                      <i className="fa-solid fa-user"></i> Data Profil
-                    </Link>
-                  </li>
-                  <li>
-                    <a className="user-nav-dropdown-item dropdown-item" href="#"><i className="fa-solid fa-arrow-right-from-bracket"></i> Keluar</a>
+            {isLogin ? 
+              <>
+                <ul className="navbar-nav">
+                  <li className="nav-item dropdown">
+                    <a className="nav-username nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {usernameLogin}
+                    </a>
+                    <ul className="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li>
+                        <Link to="/profil" className="user-nav-dropdown-item dropdown-item">
+                          <i className="fa-solid fa-user"></i> Data Profil
+                        </Link>
+                      </li>
+                      <li>
+                        {/* <Link to="/"> */}
+                          <button
+                            className="user-nav-dropdown-item dropdown-item"
+                            onClick={handleLogout}
+                          >
+                            <i className="fa-solid fa-arrow-right-from-bracket"></i> Keluar
+                          </button>
+                        {/* </Link> */}
+                      </li>
+                    </ul>
                   </li>
                 </ul>
-              </li>
-            </ul>
-            {/* <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  Masuk
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/Register" className="nav-link register">
-                  Daftar Akun
-                </Link>
-              </li>
-            </ul> */}
+              </> :
+              <>            
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link">
+                      Masuk
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/Register" className="nav-link register">
+                      Daftar Akun
+                    </Link>
+                  </li>
+                </ul>
+              </>
+              }            
           </span>
         </div>
       </div>
