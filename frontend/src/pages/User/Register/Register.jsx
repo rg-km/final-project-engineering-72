@@ -150,11 +150,13 @@ export default function Register() {
                           <button
                             type="submit"
                             className="btn btn-primary btn-daftar "
-<<<<<<< HEAD
                             // onClick={diffToast}
-=======
+
                             onClick={handleSubmit}
->>>>>>> 9be35ebdedc51dbb025fbb73473ff17a96e01b48
+
+                            // onClick={diffToast}
+
+                            // onClick={handleSubmit}
                           >
                             Daftar
                           </button>
@@ -162,7 +164,6 @@ export default function Register() {
                         </center>
                       </form>
 
-<<<<<<< HEAD
                       <center>
                         {/* <Link to="/login"> */}
                         <button
@@ -175,8 +176,6 @@ export default function Register() {
                         {/* </Link> */}
                       </center>
 
-=======
->>>>>>> 9be35ebdedc51dbb025fbb73473ff17a96e01b48
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">
                           Sudah punya akun?
