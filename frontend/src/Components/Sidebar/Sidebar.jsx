@@ -1,10 +1,11 @@
-import React from "react"
+import React from "react";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
-	const [active, setActive] = useState(0);
+
   return (
-		<nav className="sidebar card py-2 mb-4">
+    <nav className="sidebar card py-2 mb-4">
       <ul className="nav flex-column" id="nav_accordion">
         <li className="header">
           <img
@@ -16,10 +17,10 @@ function Sidebar() {
             <span>Subaku</span>
           </h6>
         </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="#">
-            <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard
-          </a>
+        <li className="nav-item {active}">
+          <Link to="/Dashboard" className="nav-link">
+          <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard{" "}
+              </Link>
         </li>
         <li className="nav-item">
           <a
@@ -37,9 +38,9 @@ function Sidebar() {
             data-bs-parent="#nav_accordion"
           >
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/Users" className="nav-link">
                 Lihat Users{" "}
-              </a>
+              </Link>
             </li>
           </ul>
         </li>
@@ -59,16 +60,16 @@ function Sidebar() {
             data-bs-parent="#nav_accordion"
           >
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/Beasiswa" className="nav-link">
                 {" "}
                 Data Master Beasiswa{" "}
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <Link to="/Apply_beasiswa" className="nav-link">
                 {" "}
                 Data Pendaftaran Beasiswa{" "}
-              </a>
+              </Link>
             </li>
           </ul>
         </li>
