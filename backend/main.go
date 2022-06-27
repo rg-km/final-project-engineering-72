@@ -5,6 +5,7 @@ import (
 	"final-project-engineering-72/handler"
 	"final-project-engineering-72/user"
 	"log"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/mattn/go-sqlite3"
@@ -32,5 +33,20 @@ func main() {
 	server.POST("/api/profile", handlerUser.ProfilUser)
 
 	// run server
-	server.Run(":8080")
+	server.Run(":3000")
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		w.Header().Set("Access-Control-Allow-Headers", "*")
+		w.Header().Set("Acces-Control-Allow-Credentials", "true")
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+		if r.Method == "OPTIONS" {
+			return
+		}
+
+		http.ServeFile(w, r, r.URL.Path[1:])
+
+	})
 }

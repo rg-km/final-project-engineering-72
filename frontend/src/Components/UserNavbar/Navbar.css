@@ -1,46 +1,68 @@
 .navbar-glass {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12.2px);
-  -webkit-backdrop-filter: blur(12.2px);
-  transition: 0.6s ease-in;
+  background: rgba(255, 255, 255, 0.59);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
 }
 
-nav {
-  transition: 0.5s ease;
-  background: #fff;
+@media screen and (max-width: 768px) {
+  .no-shadow {
+    background: rgba(255, 255, 255, 0.59);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.1px);
+    -webkit-backdrop-filter: blur(12.1px);
+  }
+
+  .navbar-glass {
+    color: #000 !important;
+  }
 }
-nav img {
+.no-shadow {
+  box-shadow: unset !important;
+}
+
+.user-navbar {
+  transition: 0.5s ease;
+  position: fixed !important;
+}
+.user-navbar img {
   height: 60px;
   width: auto;
 }
-nav .nav-right li {
-  margin: 0 10px;
-}
-nav .nav-right .login {
+.user-navbar .nav-right .nav-username {
   color: #242F9B;
 }
-nav .nav-right .login:hover {
+.user-navbar .nav-right .user-nav-dropdown-item {
+  padding: 16px;
+}
+.user-navbar .nav-right li {
+  margin: 0 10px;
+}
+.user-navbar .nav-right .login {
+  color: #242F9B;
+}
+.user-navbar .nav-right .login:hover {
   color: #757dd3;
   transition: 0.5s ease;
 }
-nav .nav-right .register {
+.user-navbar .nav-right .register {
   color: #fff;
   background-color: #242F9B;
   padding-left: 30px !important;
   padding-right: 30px !important;
   border-radius: 5px;
 }
-nav .nav-right .register:hover {
+.user-navbar .nav-right .register:hover {
   color: #fff;
   background-color: #1d2780;
   transition: 0.5s ease;
 }
-nav .nav-right .register:focus {
+.user-navbar .nav-right .register:focus {
   border: none;
   box-shadow: 0 0 0 5px #24309b7c;
   transition: 0.3s ease;
 }
-nav .nav-right .prim-btn:focus {
+.user-navbar .nav-right .prim-btn:focus {
   background-color: #131a58;
   transition: 0.1s ease;
 }
