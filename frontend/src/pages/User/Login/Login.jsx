@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useStore from "../../../store/loginStore";
 
 export default function Login() {
-  const { usernameLogin, isLogin, setUsernameLogin, setIsLogin } = useStore();
+  const { usernameLogin, isLogin, setUsernameLogin, setIsLogin, tokenLogin, setTokenLogin, roleLogin, setRoleLogin } = useStore();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -56,8 +56,12 @@ export default function Login() {
       const loginResult = response.data.data.user;
       successToastLogin();
       console.log(response);
-      setUsernameLogin(username);
+
+      setUsernameLogin(loginResult.UserName);
+      setTokenLogin(response.data.data.token_jwt);
+      setRoleLogin(loginResult.Role);
       setIsLogin(true);
+      
       setInterval(() => {
         return (window.location = "/");
       }, 1500);

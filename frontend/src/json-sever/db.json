@@ -1,0 +1,251 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "account": [
+    {
+      "id": 1,
+      "email": "riski@gmail.com",
+      "username": "riski",
+      "password": "typicode",
+      "role": "ADMIN"
+    },
+    {
+      "email": "syukurbaru@gmail.com",
+      "username": "admin",
+      "password": "admin",
+      "role": "USER",
+      "id": 2
+    },
+    {
+      "username": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "kiki.irvansyah@gmail.com",
+      "username": "test",
+      "password": "test",
+      "id": 4
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "id": 5
+    },
+    {
+      "username": "RIZKI",
+      "password": "123909",
+      "id": 6
+    },
+    {
+      "username": "RIZKI",
+      "password": "123909",
+      "id": 7
+    },
+    {
+      "username": "KKKK",
+      "password": "12123456",
+      "id": 8
+    },
+    {
+      "username": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "email": "kiki.irvansyah@gmail.com",
+      "username": "kiki@gmail.com",
+      "password": "test 123",
+      "id": 10
+    },
+    {
+      "username": "test",
+      "password": "123",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "databeasiswa": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "namaLengkap": "Muhammad Rizki Irvansyah",
+      "tanggalLahir": "2022-06-26",
+      "jenisKelamin": "Laki - laki",
+      "nisn": "4521365",
+      "alamat": "Pasapen 3 kuningan no .130 Kuningan, Jawa Barat, Indonesia",
+      "pendidikanTerakhir": "SMA",
+      "asalSekolah": "SD RUSAK",
+      "email": "kiki.irvansyah@mail.com",
+      "noTelepon": "082127344207",
+      "namaOrangTua": "WADI",
+      "pekerjaanOrangTua": "BOS",
+      "penghasilanOrangTua": "50000000",
+      "daftarLombaDiikuti": "",
+      "daftarOrganisasi": "",
+      "id": 2
+    },
+    {
+      "namaLengkap": "azis",
+      "tanggalLahir": "2022-06-10",
+      "jenisKelamin": "Laki - laki",
+      "nisn": "1234456677",
+      "alamat": "jonggol",
+      "pendidikanTerakhir": "SMA",
+      "asalSekolah": "sma bojong",
+      "email": "azis@gmail.com",
+      "noTelepon": "08123445678",
+      "namaOrangTua": "agus",
+      "pekerjaanOrangTua": "supir",
+      "penghasilanOrangTua": "1500000",
+      "daftarLombaDiikuti": "lomba renang",
+      "daftarOrganisasi": "OSIS",
+      "id": 3
+    },
+    {
+      "namaLengkap": "bayu",
+      "tanggalLahir": "2022-06-02",
+      "jenisKelamin": "Laki - laki",
+      "nisn": "12345678",
+      "alamat": "jakarta",
+      "pendidikanTerakhir": "SMA",
+      "asalSekolah": "sma 5 jakarta",
+      "email": "bayu@gmail.com",
+      "noTelepon": "08212345678",
+      "namaOrangTua": "agus",
+      "pekerjaanOrangTua": "pns",
+      "penghasilanOrangTua": "2500000",
+      "daftarLombaDiikuti": "lomba renang",
+      "daftarOrganisasi": "osis",
+      "id": 4
+    },
+    {
+      "namaLengkap": "asd",
+      "tanggalLahir": "2022-06-09",
+      "jenisKelamin": "Laki - laki",
+      "nisn": "1221434",
+      "alamat": "asd",
+      "pendidikanTerakhir": "SMA",
+      "asalSekolah": "sma 5 semarang",
+      "email": "asdad@gmail.com",
+      "noTelepon": "0829199020",
+      "namaOrangTua": "asdr",
+      "pekerjaanOrangTua": "asddd",
+      "penghasilanOrangTua": "500000",
+      "daftarLombaDiikuti": "",
+      "daftarOrganisasi": "",
+      "id": 5
+    },
+    {
+      "namaLengkap": "test",
+      "tanggalLahir": "2022-06-15",
+      "jenisKelamin": "Laki - laki",
+      "nisn": "12345",
+      "alamat": "jakarta",
+      "pendidikanTerakhir": "SMP",
+      "asalSekolah": "smp al munawar",
+      "email": "test@gmail.com",
+      "noTelepon": "082321456",
+      "namaOrangTua": "yayang",
+      "pekerjaanOrangTua": "supir",
+      "penghasilanOrangTua": "500000",
+      "daftarLombaDiikuti": "",
+      "daftarOrganisasi": "",
+      "id": 6
+    },
+    {
+      "namaLengkap": "m anindyo",
+      "tanggalLahir": "2000-11-11",
+      "jenisKelamin": "Laki - laki",
+      "nisn": "12345",
+      "alamat": "jl jalan",
+      "pendidikanTerakhir": "SMA",
+      "asalSekolah": "sma 45",
+      "email": "anin@gmail.com",
+      "noTelepon": "0878787777",
+      "namaOrangTua": "namaortu",
+      "pekerjaanOrangTua": "kerjaortu",
+      "penghasilanOrangTua": "10000000",
+      "daftarLombaDiikuti": "",
+      "daftarOrganisasi": "",
+      "id": 7
+    }
+  ],
+  "daftarBeasiswa": [
+    {
+      "id": 11,
+      "jenisBeasiswa": "Beasiswa Penelitian",
+      "sumberBeasiswa": "PT Amanah Pintar",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang aktif di dalam penelitian.",
+      "tanggalBeasiswa": "20-08-2022"
+    },
+    {
+      "id": 12,
+      "jenisBeasiswa": "Beasiswa Prestasi",
+      "sumberBeasiswa": "Cerdas Karya",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang aktif berprestasi.",
+      "tanggalBeasiswa": "03-08-2022"
+    },
+    {
+      "id": 13,
+      "jenisBeasiswa": "Beasiswa Atlet",
+      "sumberBeasiswa": "Kakikilat ltd.",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang berprestasi aktif di bidang olahraga bulutangkis.",
+      "tanggalBeasiswa": "20-10-2022"
+    },
+    {
+      "id": 14,
+      "jenisBeasiswa": "Beasiswa Prestasi",
+      "sumberBeasiswa": "Cerdas Karya",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang aktif berprestasi.",
+      "tanggalBeasiswa": "03-08-2022"
+    },
+    {
+      "id": 15,
+      "jenisBeasiswa": "Beasiswa Atlet",
+      "sumberBeasiswa": "Kakikilat ltd.",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang berprestasi aktif di bidang olahraga bulutangkis.",
+      "tanggalBeasiswa": "20-10-2022"
+    },
+    {
+      "id": 16,
+      "jenisBeasiswa": "Beasiswa Penelitian",
+      "sumberBeasiswa": "PT Amanah Pintar",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang aktif di dalam penelitian.",
+      "tanggalBeasiswa": "20-08-2022"
+    },
+    {
+      "id": 17,
+      "jenisBeasiswa": "Beasiswa Atlet",
+      "sumberBeasiswa": "Kakikilat ltd.",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang berprestasi aktif di bidang olahraga bulutangkis.",
+      "tanggalBeasiswa": "20-10-2022"
+    },
+    {
+      "id": 18,
+      "jenisBeasiswa": "Beasiswa Prestasi",
+      "sumberBeasiswa": "Cerdas Karya",
+      "descBeasiswa": "Beasiswa yang diajukan kepada siswa yang aktif berprestasi.",
+      "tanggalBeasiswa": "03-08-2022"
+    }
+  ],
+
+
+  "profile": {
+    "name": "typicode"
+  }
+}
