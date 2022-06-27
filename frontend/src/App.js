@@ -34,7 +34,6 @@ export const App = () => {
           path="/PengumumanBeasiswa"
           element={<PengumumanBeasiswa />}
         ></Route>
-        <Route path="/AdminLogin" element={<AdminLogin />}></Route>
         <Route path="/DaftarBeasiswa" element={<DaftarBeasiswa />}></Route>
         <Route path="/ProsedurBeasiswa" element={<ProsedurBeasiswa />}></Route>
         <Route path="/AdminLogin" element={<AdminLogin />}></Route>
