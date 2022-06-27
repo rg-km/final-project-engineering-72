@@ -45,6 +45,11 @@ export default function DaftarBeasiswa() {
       jenisBeasiswa: "Beasiswa Penelitian",
     },
   ];
+
+  useEffect(() => {
+    document.title = "Daftar Beasiswa - Subaku";
+  }, []);
+
   return (
     <div>
       <Navbar />

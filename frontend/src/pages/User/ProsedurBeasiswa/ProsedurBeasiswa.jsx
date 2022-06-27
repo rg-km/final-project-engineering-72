@@ -3,8 +3,12 @@ import "./ProsedurBeasiswa.css";
 import Navbar from "../../../Components/UserNavbar/Navbar";
 import Footer from "../../../Components/UserFooter/Footer";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function ProsedurBeasiswa() {
+  useEffect(() => {
+    document.title = "Prosedur Beasiswa - Subaku";
+  }, []);
   return (
     <div>
       <Navbar />
