@@ -11,12 +11,12 @@ export default function Register() {
   const toastPosition = {
     position: "top-center",
     autoClose: 5000,
-  }
+  };
 
   const errorToastRegister = (msg, err) => {
-    toast.error(msg , toastPosition);
-    console.log(err)
-  }
+    toast.error(msg, toastPosition);
+    console.log(err);
+  };
 
   useEffect(() => {
     document.title = "Subaku";
@@ -46,29 +46,23 @@ export default function Register() {
         password: password,
       });
       if (postRegister.status === 200) {
-        successToastRegister()
+        successToastRegister();
       }
       console.log(postRegister);
-    } 
-    catch (error) {
+    } catch (error) {
       if (email === "" && username === "" && password === "") {
-        errorToastRegister("Semua data masih kosong. Gagal mendaftar.", error)
-      }
-      else if (email === "") {
-        errorToastRegister("Email Anda masih kosong!", error)
-      }
-      else if (username === "") {
-        errorToastRegister("Nama pengguna Anda masih kosong!", error)
-      }
-      else if (password === "") {
-        errorToastRegister("Password Anda masih kosong!", error)
-      }
-      else if (password.length < 6) {
+        errorToastRegister("Semua data masih kosong. Gagal mendaftar.", error);
+      } else if (email === "") {
+        errorToastRegister("Email Anda masih kosong!", error);
+      } else if (username === "") {
+        errorToastRegister("Nama pengguna Anda masih kosong!", error);
+      } else if (password === "") {
+        errorToastRegister("Password Anda masih kosong!", error);
+      } else if (password.length < 6) {
         toast.warn("Password Anda harus lebih dari 6 kata!", toastPosition);
-        console.log(error)
-      }
-      else {
-        errorToastRegister("Gagal mendaftar.", error)
+        console.log(error);
+      } else {
+        errorToastRegister("Gagal mendaftar.", error);
       }
     }
   };
@@ -156,13 +150,30 @@ export default function Register() {
                           <button
                             type="submit"
                             className="btn btn-primary btn-daftar "
+
+                            // onClick={diffToast}
+
                             onClick={handleSubmit}
+
                           >
                             Daftar
                           </button>
                           {/* </Link> */}
                         </center>
                       </form>
+
+                      <center>
+                        {/* <Link to="/login"> */}
+                        <button
+                          type="submit"
+                          className="btn btn-primary btn-daftar "
+                          onClick={handleSubmit}
+                        >
+                          Daftar
+                        </button>
+                        {/* </Link> */}
+                      </center>
+
 
                       <div className="teks-bawah text-center ">
                         <label className="form-label-bawah ">

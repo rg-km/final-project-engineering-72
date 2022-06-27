@@ -2,7 +2,27 @@ import React from "react";
 import ".//DataProfil.css";
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function () {
+  const toastPosition = {
+    position: "top-center",
+    autoClose: 5000,
+  };
+
+  const successToast = () => {
+    toast.success("Data berhasil di submit!", {
+      position: "top-center",
+      autoClose: 5000,
+      theme: "colored",
+    });
+
+    const errorToast = (msg, err) => {
+      toast.error(msg, toastPosition);
+      console.log(err);
+    };
+  };
+  //data dummy using json-server
   const [namaLengkap, setNamaLengkap] = useState("");
   const [tanggalLahir, setTanggalLahir] = useState("");
   const [jenisKelamin, setJenisKelamin] = useState("");
@@ -61,6 +81,7 @@ export default function () {
     setDaftarOrganisasi(e.target.value);
   };
 
+  //data dummy using json-server
   const submitHandler = (e) => {
     e.preventDefault();
     const dataBeasiswa = {
@@ -80,11 +101,13 @@ export default function () {
       daftarOrganisasi: daftarOrganisasi,
     };
     console.log(dataBeasiswa);
+
+    //data dummy using json-server
     axios
       .post(" http://localhost:5000/databeasiswa", dataBeasiswa)
       .then((response) => {
         console.log(response);
-        alert("pendaftaran sukses");
+        successToast();
       })
       .catch(function (error) {
         console.log(error);

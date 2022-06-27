@@ -21,6 +21,8 @@ export default function LandingPage() {
   //   <Navigate replace to="/login" />;
   // }
 
+
+
   const JumbotronDesc = () => {
     if (isLogin === true) {
       return (
@@ -42,6 +44,7 @@ export default function LandingPage() {
       </>
     )
   }
+
 
   return (
     <div>

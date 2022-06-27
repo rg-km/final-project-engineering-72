@@ -17,7 +17,7 @@ export default function Login() {
   const toastPosition = {
     position: "top-center",
     autoClose: 5000,
-  }
+  };
 
   const successToastLogin = () => {
     toast.success("Sukses login!", {
@@ -28,9 +28,9 @@ export default function Login() {
   };
 
   const errorToastLogin = (msg, err) => {
-    toast.error(msg , toastPosition);
-    console.log(err)
-  }
+    toast.error(msg, toastPosition);
+    console.log(err);
+  };
 
   useEffect(() => {
     document.title = "Subaku";
@@ -103,9 +103,33 @@ export default function Login() {
     catch (error) {
       if (username === "" && password === "") {
         errorToastLogin("Username dan Password Anda masih kosong!");
-      }
-      else {
+      } else {
         if (username === "") {
+
+          errorToastLogin("Username Anda masih kosong!");
+        } else if (password === "") {
+          errorToastLogin("Password Anda masih kosong!");
+        } else {
+          let response = await axios.post(
+            "/api/login",
+            {
+              username: username,
+              password: password,
+            },
+            {
+              headers: {
+                Accept: "/",
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          successToastLogin();
+          console.log(response);
+          setIsLogin(true);
+        }
+      }
+    } catch (error) {
+
           errorToastLogin("Username Anda masih kosong!")
         }
         else if (password === "") {
@@ -113,13 +137,22 @@ export default function Login() {
         }
       }
       errorToastLogin("Username atau Password Anda salah!");
+
       console.log(error);
     }
   };
 
 
+  setInterval(() => {
+    if (isLogin === true) {
+      return (window.location = "/");
+    }
+  }, 1500);
+
+
+
   return (
-    <div>    
+    <div>
       <section id="login">
         <div className="container">
           <div className="row">
