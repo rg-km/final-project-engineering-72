@@ -39,43 +39,6 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // try {
-    //   let response = await axios.get(
-    //     "http://localhost:8080/api/register",
-    //     {
-    //       Username: username,
-    //       password: password,
-    //     },
-    //     {
-    //       headers: {
-    //         Accept: "/",
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   );
-    //   console.log(response);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
-    // axios
-    //   .post("http://localhost:5000/account", {
-    //     username: username,
-    //     password: password,
-    //   })
-    //   .then((response) => {
-    //     alert(response);
-    //     localStorage.setItem("isAuthenticated", true);
-    //     localStorage.setItem("role", "USER");
-    //     console.log(response);
-    //     navigate("/");
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //     alert("gagal");
-    //   });
-
     try {
       let response = await axios.post(
         "/api/login",
