@@ -18,6 +18,7 @@ import ScrollTop from "./utils/ScrollTop";
 import Apply_beasiswa from "./pages/Admin/Beasiswa/Apply_beasiswa";
 import Beasiswa from "./pages/Admin/Beasiswa/Beasiswa";
 import Users from "./pages/Admin/User/Users";
+import AdminLogin from "./pages/Admin/Login/AdminLogin";
 
 export const App = () => {
   return (
@@ -33,6 +34,7 @@ export const App = () => {
           path="/PengumumanBeasiswa"
           element={<PengumumanBeasiswa />}
         ></Route>
+        <Route path="/AdminLogin" element={<AdminLogin />}></Route>
         <Route path="/DaftarBeasiswa" element={<DaftarBeasiswa />}></Route>
         <Route path="/ProsedurBeasiswa" element={<ProsedurBeasiswa />}></Route>
         <Route path="/Apply_beasiswa" element={<Apply_beasiswa />}></Route>
