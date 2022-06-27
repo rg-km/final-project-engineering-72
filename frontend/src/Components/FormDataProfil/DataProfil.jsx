@@ -1,13 +1,103 @@
 import React from "react";
 import ".//DataProfil.css";
-
+import { useState } from "react";
+import axios from "axios";
 export default function () {
+  const [namaLengkap, setNamaLengkap] = useState("");
+  const [tanggalLahir, setTanggalLahir] = useState("");
+  const [jenisKelamin, setJenisKelamin] = useState("");
+  const [nisn, setNisn] = useState("");
+  const [alamat, setAlamat] = useState("");
+  const [pendidikanTerakhir, setPendidikanTerakhir] = useState("");
+  const [asalSekolah, setAsalSekolah] = useState("");
+  const [email, setEmail] = useState("");
+  const [noTelepon, setNoTelepon] = useState("");
+  const [namaOrangTua, setNamaOrangTua] = useState("");
+  const [pekerjaanOrangTua, setPekerjaanOrangTua] = useState("");
+  const [penghasilanOrangTua, setPenghasilanOrangTua] = useState("");
+  const [daftarLombaDiikuti, setDaftarLombaDiikuti] = useState("");
+  const [daftarOrganisasi, setDaftarOrganisasi] = useState("");
+
+  const setNamaLengkapHandler = (e) => {
+    setNamaLengkap(e.target.value);
+  };
+  const setTanggalLahirHandler = (e) => {
+    setTanggalLahir(e.target.value);
+  };
+  const setJenisKelaminHandler = (e) => {
+    setJenisKelamin(e.target.value);
+  };
+  const setNisnHandler = (e) => {
+    setNisn(e.target.value);
+  };
+  const setAlamatHandler = (e) => {
+    setAlamat(e.target.value);
+  };
+  const setPendidikanTerakhirHandler = (e) => {
+    setPendidikanTerakhir(e.target.value);
+  };
+  const setAsalSekolahHandler = (e) => {
+    setAsalSekolah(e.target.value);
+  };
+  const setEmailHandler = (e) => {
+    setEmail(e.target.value);
+  };
+  const setNoTeleponHandler = (e) => {
+    setNoTelepon(e.target.value);
+  };
+  const setNamaOrangTuaHandler = (e) => {
+    setNamaOrangTua(e.target.value);
+  };
+  const setPekerjaanOrangTuaHandler = (e) => {
+    setPekerjaanOrangTua(e.target.value);
+  };
+  const setPenghasilanOrangTuaHandler = (e) => {
+    setPenghasilanOrangTua(e.target.value);
+  };
+  const setDaftarLombaDiikutiHandler = (e) => {
+    setDaftarLombaDiikuti(e.target.value);
+  };
+  const setDaftarOrganisasiHandler = (e) => {
+    setDaftarOrganisasi(e.target.value);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const dataBeasiswa = {
+      namaLengkap: namaLengkap,
+      tanggalLahir: tanggalLahir,
+      jenisKelamin: jenisKelamin,
+      nisn: nisn,
+      alamat: alamat,
+      pendidikanTerakhir: pendidikanTerakhir,
+      asalSekolah: asalSekolah,
+      email: email,
+      noTelepon: noTelepon,
+      namaOrangTua: namaOrangTua,
+      pekerjaanOrangTua: pekerjaanOrangTua,
+      penghasilanOrangTua: penghasilanOrangTua,
+      daftarLombaDiikuti: daftarLombaDiikuti,
+      daftarOrganisasi: daftarOrganisasi,
+    };
+    console.log(dataBeasiswa);
+    axios
+      .post(" http://localhost:5000/databeasiswa", dataBeasiswa)
+      .then((response) => {
+        console.log(response);
+        alert("pendaftaran sukses");
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("gagal");
+      });
+  };
+
   return (
     <div className="data-profil">
       <div className="card ">
         <div className="card-body">
-          <div className="card-title">Data Profil</div>
-          <form>
+          <p className="text-center">Data Profil</p>
+          <form onSubmit={submitHandler}>
             <div className="row">
               <div className="col-md-5 mx-auto ">
                 <div className="mb-5">
@@ -19,6 +109,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Nama Lengkap"
+                    onChange={setNamaLengkapHandler}
+                    value={namaLengkap}
                   />
                 </div>
               </div>
@@ -32,6 +124,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Tanggal Lahir"
+                    onChange={setTanggalLahirHandler}
+                    value={tanggalLahir}
                   />
                 </div>
               </div>
@@ -45,6 +139,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="NISN"
+                    onChange={setNisnHandler}
+                    value={nisn}
                   />
                 </div>
               </div>
@@ -53,7 +149,12 @@ export default function () {
                   <label for="disabledSelect" className="form-label">
                     Jenis Kelamin
                   </label>
-                  <select id="disabledSelect" className="form-select">
+                  <select
+                    id="disabledSelect"
+                    className="form-select"
+                    onChange={setJenisKelaminHandler}
+                    value={jenisKelamin}
+                  >
                     <option></option>
                     <option>Laki - laki</option>
                     <option>Perempuan</option>
@@ -70,6 +171,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Alamat"
+                    onChange={setAlamatHandler}
+                    value={alamat}
                   />
                 </div>
               </div>
@@ -78,7 +181,12 @@ export default function () {
                   <label for="disabledSelect" className="form-label">
                     Pendidikan Terakhir
                   </label>
-                  <select id="" className="form-select">
+                  <select
+                    id=""
+                    className="form-select"
+                    onChange={setPendidikanTerakhirHandler}
+                    value={pendidikanTerakhir}
+                  >
                     <option></option>
                     <option>SD</option>
                     <option>SMP</option>
@@ -96,6 +204,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Asal Sekolah"
+                    onChange={setAsalSekolahHandler}
+                    value={asalSekolah}
                   />
                 </div>
               </div>
@@ -109,6 +219,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Email"
+                    onChange={setEmailHandler}
+                    value={email}
                   />
                 </div>
               </div>
@@ -121,7 +233,9 @@ export default function () {
                     type="text"
                     id="disabledTextInput"
                     className="form-control"
-                    placeholder="No Telepon"
+                    placeholder="NoTelepon"
+                    onChange={setNoTeleponHandler}
+                    value={noTelepon}
                   />
                 </div>
               </div>
@@ -135,6 +249,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Nama Orang Tua"
+                    onChange={setNamaOrangTuaHandler}
+                    value={namaOrangTua}
                   />
                 </div>
               </div>
@@ -148,6 +264,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Pekerjaan Orang Tua"
+                    onChange={setPekerjaanOrangTuaHandler}
+                    value={pekerjaanOrangTua}
                   />
                 </div>
               </div>
@@ -161,6 +279,8 @@ export default function () {
                     id="disabledTextInput"
                     className="form-control"
                     placeholder="Penghasilan Orang Tua"
+                    onChange={setPenghasilanOrangTuaHandler}
+                    value={penghasilanOrangTua}
                   />
                 </div>
               </div>
@@ -174,6 +294,8 @@ export default function () {
                     placeholder=""
                     id="floatingTextarea2"
                     style={{ height: "100px" }}
+                    onChange={setDaftarLombaDiikutiHandler}
+                    value={daftarLombaDiikuti}
                   ></textarea>
                 </div>
               </div>
@@ -187,6 +309,8 @@ export default function () {
                     placeholder=""
                     id="floatingTextarea2"
                     style={{ height: "100px" }}
+                    onChange={setDaftarOrganisasiHandler}
+                    value={daftarOrganisasi}
                   ></textarea>
                 </div>
               </div>

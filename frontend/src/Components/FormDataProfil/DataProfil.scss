@@ -4,17 +4,21 @@
     background: #ffffff;
     border-radius: 11px;
     margin-top: -15px;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
     .card-body {
-      .card-title {
+      p {
         font-family: "PT Sans";
         font-style: normal;
         font-weight: 700;
         font-size: 36px;
-        line-height: 140.62%;
+        // line-height: 140.62%;
         /* or 51px */
         color: #242f9b;
-        padding-left: 563px;
-        padding-top: 10px;
+        // margin-left: 100px;
+        // padding-top: 10px;
+        // text-align: center;
       }
       .row {
         padding-top: 60px;

@@ -8,16 +8,13 @@
   margin-top: -15px;
 }
 
-.data-profil .card .card-body .card-title {
+.data-profil .card .card-body p {
   font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 140.62%;
   /* or 51px */
   color: #242f9b;
-  padding-left: 563px;
-  padding-top: 10px;
 }
 
 .data-profil .card .card-body .row {

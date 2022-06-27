@@ -1,10 +1,40 @@
-nav {
-  background: #fff;
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.59);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
+}
+
+@media screen and (max-width: 768px) {
+  .no-shadow {
+    background: rgba(255, 255, 255, 0.59);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.1px);
+    -webkit-backdrop-filter: blur(12.1px);
+  }
+  .navbar-glass {
+    color: #000 !important;
+  }
+}
+
+.no-shadow {
+  box-shadow: unset !important;
+}
+
+.user-navbar {
+  transition: 0.5s ease;
+  position: fixed !important;
   img {
     height: 60px;
     width: auto;
   }
   .nav-right {
+    .nav-username {
+      color: #242F9B;
+    }
+    .user-nav-dropdown-item {
+      padding: 16px;
+    }
     li {
       margin: 0 10px;
     }
