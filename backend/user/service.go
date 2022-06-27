@@ -8,6 +8,7 @@ import (
 type Service interface {
 	RegisterUser(input InputRegister) (User, error)
 	LoginUser(input InputLogin) (User, error)
+	ProfilUser(input InputProfil) (User, error)
 }
 
 // bikin struct dengan atribut bertipe Repository
@@ -51,21 +52,40 @@ func (s *service) RegisterUser(input InputRegister) (User, error) {
 // func login
 func (s *service) LoginUser(input InputLogin) (User, error) {
 	// tangkap data login setelah register
-	username := input.Username
 	password := input.Password
 
 	// cek apakah username daan password ada apa ngga di db
-	user, _ := s.repository.FindUserByUsername(username)
-	users, _ := s.repository.FindUserByPassword(password)
-
-	// jika username sesuai
-	if user.Id != 0 {
-		return user, errors.New("username sudah valid")
-	}
+	user, _ := s.repository.FindUserByPassword(password)
 
 	//jika password seuai
 	if user.Id != 0 {
-		return users, errors.New("password sudah valid")
+		return user, errors.New("password sudah valid")
 	}
-	return users, nil
+	return user, nil
+}
+
+// func data_profil
+func (s *service) ProfilUser(input InputProfil) (User, error) {
+
+	//binding
+	var myUser User
+	myUser.Nisn = input.Nisn
+	myUser.Nama = input.Nama
+	myUser.TanggalLahir = input.TanggalLahir
+	myUser.JenisKelamin = input.JenisKelamin
+	myUser.Alamat = input.Alamat
+	myUser.AsalSekolah = input.AsalSekolah
+	myUser.PendidikanTerkahir = input.PendidikanTerkahir
+	myUser.NomorTelepon = input.NomorTelepon
+	myUser.NamaOrangTua = input.NamaOrangTua
+	myUser.PekerjaanOrangTua = input.PekerjaanOrangTua
+	myUser.PenghasilanOrangTua = input.PenghasilanOrangTua
+
+	// simpan data ke database
+	newUser, err := s.repository.Save(myUser)
+	if err != nil {
+		return newUser, err
+	}
+
+	return newUser, nil
 }

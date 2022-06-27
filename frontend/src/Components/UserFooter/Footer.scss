@@ -1,15 +1,17 @@
 .footer {
-  background: #242F9B;
+  background: #242f9b;
   padding-top: 8vh;
   .container {
-    height: 420px;
+    height: 300px;
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: space-between;
     h2 {
       color: #fff;
     }
-    h4, p, a {
+    h4,
+    p,
+    a {
       color: #e4e4e4;
     }
     ul {
