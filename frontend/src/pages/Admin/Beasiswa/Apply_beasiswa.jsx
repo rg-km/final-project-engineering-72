@@ -20,7 +20,7 @@ export default function Apply_beasiswa() {
                             <li class="breadcrumb-item active" aria-current="page">Data Pendaftaran Beasiswa</li>
                         </ol>
                     </nav>
-                    <div className="main-content">
+                    <div className="main-content-beasiswa">
                         <nav className="navbar">
                             <div className="container-fluid">
                                 <p>
