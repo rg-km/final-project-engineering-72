@@ -6,8 +6,14 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useStore from "../../../store/loginStore";
 
 export default function Login() {
+  const {usernameLogin, isLogin, setUsernameLogin, setIsLogin} = useStore();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  
+  
   const toastPosition = {
     position: "top-center",
     autoClose: 5000,
@@ -29,13 +35,10 @@ export default function Login() {
   useEffect(() => {
     document.title = "Subaku";
   }, []);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // try {
@@ -57,24 +60,47 @@ export default function Login() {
     //   console.log(error);
     // }
 
-    axios
-      .post("http://localhost:5000/account", {
-        username: username,
-        password: password,
-      })
-      .then((response) => {
-        alert(response);
-        localStorage.setItem("isAuthenticated", true);
-        localStorage.setItem("role", "USER");
-        console.log(response);
-        navigate("/");
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert("gagal");
-      });
+    // axios
+    //   .post("http://localhost:5000/account", {
+    //     username: username,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     alert(response);
+    //     localStorage.setItem("isAuthenticated", true);
+    //     localStorage.setItem("role", "USER");
+    //     console.log(response);
+    //     navigate("/");
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //     alert("gagal");
+    //   });
 
     try {
+      let response = await axios.post(
+        "/api/login",
+        {
+          username: username,
+          password: password,
+        },
+        {
+          headers: {
+            Accept: "/",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const loginResult = response.data.data.user;
+      successToastLogin();
+      console.log(response);
+      setUsernameLogin(username);
+      setIsLogin(true);
+      setInterval(() => {
+          return window.location = "/"  
+      }, 1500);
+    } 
+    catch (error) {
       if (username === "" && password === "") {
         errorToastLogin("Username dan Password Anda masih kosong!");
       }
@@ -85,37 +111,11 @@ export default function Login() {
         else if (password === "") {
           errorToastLogin("Password Anda masih kosong!")      
         }
-        else {
-          let response = await axios.post(
-            "/api/login",
-            {
-              username: username,
-              password: password,
-            },
-            {
-              headers: {
-                Accept: "/",
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          successToastLogin();
-          console.log(response);
-          setIsLogin(true);
-        }
       }
-    } 
-    catch (error) {
       console.log(error);
     }
-
   };
 
-  setInterval(() => {
-    if (isLogin === true) {
-      return window.location = "/"
-    }
-  }, 1500);
 
   return (
     <div>    
@@ -161,7 +161,7 @@ export default function Login() {
                           />
                         </div>
                         <center>
-                          {/* <Link to="/"> */}
+                          <Link to="/profile">
                           <button
                             type="submit"
                             className="btn btn-primary btn-masuk "
@@ -169,7 +169,7 @@ export default function Login() {
                           >
                             Masuk
                           </button>
-                          {/* </Link> */}
+                          </Link>
                         </center>
                       </form>
 
