@@ -5,21 +5,21 @@ import "./FormListBeasiswa.css"
 export default function FormListBeasiswa({idBeasiswa, sumberBeasiswa, jenisBeasiswa, tanggalPendaftaran, keterangan}) {
 
   return (
-    <div className="col-md-6">
+    <div className="col-md-6 ">
       <div className="daftar-item card">
         <div className={`card-header 
         ${(jenisBeasiswa === "Beasiswa Atlet") ? "red" : 
           (jenisBeasiswa === "Beasiswa Penelitian") ? "green" :
           (jenisBeasiswa === "Beasiswa Prestasi") ? "orange" : ""}`}>
           <h3>{jenisBeasiswa}</h3>
-          <h5>Nama Instansi </h5>
+          <h5>{sumberBeasiswa}</h5>
         </div>
         <div className="card-body">
-          <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p className="card-text">{keterangan}</p>
         </div>
         <div className="card-body daftar-item-footer">
           <div className="tanggal-bea">
-            <p>Disalurkan pada: <time>17-07-2022</time></p>
+            <p>Disalurkan pada: <time>{tanggalPendaftaran}</time></p>
           </div>
           <button className="my-btn prim-btn daftar-item-btn" data-bs-toggle="modal" data-bs-target="#konfirmDaftarModal">Daftar</button>        
         </div>
