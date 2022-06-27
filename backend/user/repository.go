@@ -9,7 +9,7 @@ type Repository interface {
 	Save(user User) (User, error)
 	FindUserByEmail(email string) (User, error)
 	FindUserByUsername(username string) (User, error)
-	FindUserByPassword(password string) (User, error)
+	// FindUserByPassword(password string) (User, error)
 }
 
 // repo ini butuh koneksi database untuk query
