@@ -29,7 +29,7 @@ export const App = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/profil" element={<Profil />}></Route>
-        {/* <Route path="/Dashboard" element={<Dashboard />}></Route> */}
+        <Route path="/Dashboard" element={<Dashboard />}></Route>
         <Route
           path="/PengumumanBeasiswa"
           element={<PengumumanBeasiswa />}
@@ -37,8 +37,8 @@ export const App = () => {
         <Route path="/DaftarBeasiswa" element={<DaftarBeasiswa />}></Route>
         <Route path="/ProsedurBeasiswa" element={<ProsedurBeasiswa />}></Route>
         <Route path="/AdminLogin" element={<AdminLogin />}></Route>
-        {/* <Route path="/Apply_beasiswa" element={<Apply_beasiswa />}></Route>
-        <Route path="/Beasiswa" element={<Beasiswa />}></Route> */}
+        <Route path="/Apply_beasiswa" element={<Apply_beasiswa />}></Route>
+        <Route path="/Beasiswa" element={<Beasiswa />}></Route>
         <Route path="/Users" element={<Users />}></Route>
       </Routes>
       <ToastContainer />
